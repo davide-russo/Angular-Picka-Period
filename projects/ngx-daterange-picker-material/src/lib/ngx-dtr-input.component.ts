@@ -1,7 +1,4 @@
 import {Directive, ElementRef, HostListener, Input} from '@angular/core';
-import * as _moment from 'moment';
-
-const moment = _moment;
 
 @Directive({
     selector: 'input[ngxDtrPicker]',

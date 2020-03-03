@@ -1,14 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { Subject } from 'rxjs';
-import * as momentImported from 'moment'; const moment = momentImported;
+import {Component} from '@angular/core';
+import {Subject} from 'rxjs';
+
+import * as _moment from 'moment';
+
+const moment = _moment;
 
 @Component({
     selector: 'lib-ngx-dtr-picker',
-    templateUrl: './datepicker.html',
-    styleUrls: ['./datepicker.css']
+    templateUrl: './ngx-dtr-picker.html',
+    styleUrls: ['./ngx-dtr-picker.css']
 })
-export class NgxDtrPickerComponent implements OnInit {
-
+export class NGXDaterangePickerMaterialComponent {
     public dateSubject  = new Subject();
     public show = false;
     public fromSetting;
@@ -19,7 +21,6 @@ export class NgxDtrPickerComponent implements OnInit {
         from: new Date(),
         to: new Date()
     };
-    public otherSettings;
 
     constructor() {
     }
@@ -103,14 +104,10 @@ export class NgxDtrPickerComponent implements OnInit {
 
             case 'custom':
             break;
-
         }
-        console.log(this.range);
     }
 
     close() {
         this.show = false;
     }
-
-    ngOnInit() { }
 }

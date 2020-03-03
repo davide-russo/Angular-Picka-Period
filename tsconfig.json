@@ -19,11 +19,11 @@
       "dom"
     ],
     "paths": {
-      "ngx-dtr-picker": [
-        "dist/ngx-dtr-picker"
+      "ngx-daterange-picker-material": [
+        "dist/ngx-daterange-picker-material"
       ],
-      "ngx-dtr-picker/*": [
-        "dist/ngx-dtr-picker/*"
+      "ngx-daterange-picker-material/*": [
+        "dist/ngx-daterange-picker-material/*"
       ]
     }
   }

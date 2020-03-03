@@ -5,7 +5,7 @@ import * as momentImported from 'moment';
 const moment = momentImported;
 
 @Component({
-    selector: 'lib-calendar',
+    selector: 'lib-ngx-dtr-calendar',
     template: `
     <table class="table-condensed">
         <thead>
@@ -33,9 +33,9 @@ const moment = momentImported;
         </tr>
     </table>
     `,
-    styleUrls: ['./calendar.css']
+    styleUrls: ['./ngx-dtr-calendar.css']
 })
-export class CalendarComponent implements OnChanges {
+export class NGXDtrCalendarComponent implements OnChanges {
     @Input() position;
     @Input() dates;
     @Input() range;

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NgxDtrPickerComponent } from './ngx-dtr-picker.component';
+import { NGXDaterangePickerMaterialComponent } from './ngx-daterange-picker-material.component';
 
 describe('DateRangeComponent', () => {
-  let component: NgxDtrPickerComponent;
-  let fixture: ComponentFixture<NgxDtrPickerComponent>;
+  let component: NGXDaterangePickerMaterialComponent;
+  let fixture: ComponentFixture<NGXDaterangePickerMaterialComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NgxDtrPickerComponent ]
+      declarations: [ NGXDaterangePickerMaterialComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NgxDtrPickerComponent);
+    fixture = TestBed.createComponent(NGXDaterangePickerMaterialComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -5,7 +5,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 
 import {AppComponent} from './app.component';
-import {NgxDtrPickerModule} from '../../projects/ngx-dtr-picker/src/public_api';
+import {NGXDaterangePickerMaterialModule} from 'ngx-datetime-range-picker-material';
 
 @NgModule({
   declarations: [
@@ -14,9 +14,9 @@ import {NgxDtrPickerModule} from '../../projects/ngx-dtr-picker/src/public_api';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    NgxDtrPickerModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    NGXDaterangePickerMaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

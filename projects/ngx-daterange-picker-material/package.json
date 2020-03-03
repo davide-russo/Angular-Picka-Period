@@ -1,5 +1,5 @@
 {
-  "name": "ngx-daterange-picker-material",
+  "name": "ngx-datetime-range-picker-material",
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^9.0.4",
