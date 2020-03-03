@@ -1,6 +1,6 @@
 {
-  "name": "ngx-daterange-picker-material",
-  "version": "0.0.0",
+  "name": "ngx-datetime-range-picker-material",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular-devkit/build-ng-packagr": "~0.900.4",
     "@angular/animations": "^9.0.4",
