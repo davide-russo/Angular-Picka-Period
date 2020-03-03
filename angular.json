@@ -24,7 +24,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -80,7 +81,8 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              "src/styles.css"
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
+              "src/styles.scss"
             ],
             "scripts": [],
             "assets": [
@@ -139,9 +141,9 @@
           },
           "configurations": {
             "production": {
-              "project": "projects/ngx-dtr-picker/ng-package.prod.json"
-            ,              "tsConfig": "projects/ngx-dtr-picker/tsconfig.lib.prod.json"
-}
+              "project": "projects/ngx-dtr-picker/ng-package.prod.json",
+              "tsConfig": "projects/ngx-dtr-picker/tsconfig.lib.prod.json"
+            }
           }
         },
         "test": {
@@ -167,5 +169,10 @@
       }
     }
   },
-  "defaultProject": "ngx-dtr-picker-demo"
+  "defaultProject": "ngx-dtr-picker-demo",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }

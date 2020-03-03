@@ -8,8 +8,8 @@ import { NGXDatetimeRangePickerMaterial } from './datepicker-input.component';
     CommonModule
   ],
   declarations: [
-      NgxDtrPickerComponent,
       CalendarComponent,
+      NgxDtrPickerComponent,
       NGXDatetimeRangePickerMaterial
     ],
   exports: [NgxDtrPickerComponent, NGXDatetimeRangePickerMaterial]

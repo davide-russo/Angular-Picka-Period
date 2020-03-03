@@ -1,4 +1,13 @@
-<input placeholder="date range" [ngxDtrPicker]="picker1" value="3/1/2020-3/3/2020">
-<lib-ngx-dtr-picker #picker1 ></lib-ngx-dtr-picker>
-<input placeholder="date range" [ngxDtrPicker]="picker2" value="3/1/2020-3/3/2020">
-<lib-ngx-dtr-picker #picker2></lib-ngx-dtr-picker>
+<mat-form-field>
+    <input matInput placeholder="date range" [ngxDtrPicker]="daterangePicker" value="2/2/2018-4/4/2018" >
+</mat-form-field>
+<div style="position: relative;  ">
+    <lib-ngx-dtr-picker #daterangePicker  ></lib-ngx-dtr-picker>
+</div>
+
+<mat-form-field>
+    <input matInput placeholder="date range" [ngxDtrPicker]="daterangePicker2" value="2/2/2018-4/4/2018" >
+</mat-form-field>
+<div style="position: relative; ">
+    <lib-ngx-dtr-picker #daterangePicker2></lib-ngx-dtr-picker>
+</div>

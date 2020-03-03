@@ -1,9 +1,11 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
-import { NgxDtrPickerModule } from '../../projects/ngx-dtr-picker/src/public_api';
+import {AppComponent} from './app.component';
+import {NgxDtrPickerModule} from '../../projects/ngx-dtr-picker/src/public_api';
 
 @NgModule({
   declarations: [
@@ -13,6 +15,8 @@ import { NgxDtrPickerModule } from '../../projects/ngx-dtr-picker/src/public_api
     BrowserModule,
     BrowserAnimationsModule,
     NgxDtrPickerModule,
+    MatInputModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
