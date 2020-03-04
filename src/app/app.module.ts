@@ -5,7 +5,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 
 import {AppComponent} from './app.component';
-import {PickaPeriodModule} from '../../projects/picka-period/src/lib/picka-period.module';
+import {PickaPeriodModule} from 'ngx-picka-period';
 
 @NgModule({
   declarations: [

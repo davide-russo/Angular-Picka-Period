@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ngx-picka-period": {
+    "angular-picka-period": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -14,7 +14,7 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "aot": true,
-            "outputPath": "dist/ngx-picka-period",
+            "outputPath": "dist/angular-picka-period",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -59,18 +59,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ngx-picka-period:build"
+            "browserTarget": "angular-picka-period:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ngx-picka-period:build:production"
+              "browserTarget": "angular-picka-period:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ngx-picka-period:build"
+            "browserTarget": "angular-picka-period:build"
           }
         },
         "test": {
@@ -105,21 +105,21 @@
         }
       }
     },
-    "ngx-picka-period-e2e": {
-      "root": "ngx-picka-period-e2e/",
+    "angular-picka-period-e2e": {
+      "root": "angular-picka-period-e2e/",
       "projectType": "application",
       "architect": {
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "ngx-picka-period-e2e/protractor.conf.js",
-            "devServerTarget": "ngx-picka-period:serve"
+            "protractorConfig": "angular-picka-period-e2e/protractor.conf.js",
+            "devServerTarget": "angular-picka-period:serve"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": "ngx-picka-period-e2e/tsconfig.e2e.json",
+            "tsConfig": "angular-picka-period-e2e/tsconfig.e2e.json",
             "exclude": [
               "**/node_modules/**"
             ]
@@ -127,39 +127,39 @@
         }
       }
     },
-    "ngx-daterange-picker-material": {
-      "root": "projects/picka-period",
-      "sourceRoot": "projects/picka-period/src",
+    "ngx-picka-period": {
+      "root": "projects/ngx-picka-period",
+      "sourceRoot": "projects/ngx-picka-period/src",
       "projectType": "library",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "projects/picka-period/tsconfig.lib.json",
-            "project": "projects/picka-period/ng-package.json"
+            "tsConfig": "projects/ngx-picka-period/tsconfig.lib.json",
+            "project": "projects/ngx-picka-period/ng-package.json"
           },
           "configurations": {
             "production": {
-              "project": "projects/picka-period/ng-package.prod.json",
-              "tsConfig": "projects/picka-period/tsconfig.lib.prod.json"
+              "project": "projects/ngx-picka-period/ng-package.prod.json",
+              "tsConfig": "projects/ngx-picka-period/tsconfig.lib.prod.json"
             }
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/picka-period/src/test.ts",
-            "tsConfig": "projects/picka-period/tsconfig.spec.json",
-            "karmaConfig": "projects/picka-period/karma.conf.js"
+            "main": "projects/ngx-picka-period/src/test.ts",
+            "tsConfig": "projects/ngx-picka-period/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-picka-period/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/picka-period/tsconfig.lib.json",
-              "projects/picka-period/tsconfig.spec.json"
+              "projects/ngx-picka-period/tsconfig.lib.json",
+              "projects/ngx-picka-period/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -169,7 +169,7 @@
       }
     }
   },
-  "defaultProject": "ngx-picka-period-demo",
+  "defaultProject": "angular-picka-period",
   "schematics": {
     "@schematics/angular:component": {
       "styleext": "scss"

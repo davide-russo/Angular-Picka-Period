@@ -19,11 +19,11 @@
       "dom"
     ],
     "paths": {
-      "ngx-picka-period": [
-        "dist/ngx-picka-period"
+      "angular-picka-period": [
+        "dist/angular-picka-period"
       ],
-      "ngx-picka-period/*": [
-        "dist/ngx-picka-period/*"
+      "angular-picka-period/*": [
+        "dist/angular-picka-period/*"
       ]
     }
   }
