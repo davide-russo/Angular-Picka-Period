@@ -1,4 +1,4 @@
-# ngx-datetime-range-picker-material
+# ngx-picka-period
 
 A picker that allows you to select a range of period specifying day and time.
 
