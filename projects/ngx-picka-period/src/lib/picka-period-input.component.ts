@@ -2,7 +2,7 @@ import {Directive, ElementRef, HostListener, Input} from '@angular/core';
 
 @Directive({
     selector: 'input[ngxPickaPeriod]',
-    exportAs: 'DatepickerRangeInput'
+    exportAs: 'PickaPeriodInput'
 })
 export class PickaPeriodInput {
     public dateRangePicker: any;
