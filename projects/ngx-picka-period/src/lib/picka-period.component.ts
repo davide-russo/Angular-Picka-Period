@@ -6,11 +6,11 @@ import * as _moment from 'moment';
 const moment = _moment;
 
 @Component({
-    selector: 'lib-ngx-dtr-picker',
-    templateUrl: './ngx-dtr-picker.html',
-    styleUrls: ['./ngx-dtr-picker.css']
+    selector: 'lib-picka-period',
+    templateUrl: './picka-period.html',
+    styleUrls: ['./picka-period.css']
 })
-export class NGXDaterangePickerMaterialComponent {
+export class PickaPeriodComponent {
     public dateSubject  = new Subject();
     public show = false;
     public fromSetting;

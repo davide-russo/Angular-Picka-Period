@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Demo ngx-daterange-picker-material';
+  title = 'Demo ngx-picka-period';
 }

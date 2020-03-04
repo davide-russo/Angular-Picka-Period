@@ -5,7 +5,7 @@ import * as momentImported from 'moment';
 const moment = momentImported;
 
 @Component({
-    selector: 'lib-ngx-dtr-calendar',
+    selector: 'lib-picka-period-calendar',
     template: `
     <table class="table-condensed">
         <thead>
@@ -33,9 +33,9 @@ const moment = momentImported;
         </tr>
     </table>
     `,
-    styleUrls: ['./ngx-dtr-calendar.css']
+    styleUrls: ['./picka-period-calendar.css']
 })
-export class NGXDtrCalendarComponent implements OnChanges {
+export class PickaPeriodCalendarComponent implements OnChanges {
     @Input() position;
     @Input() dates;
     @Input() range;

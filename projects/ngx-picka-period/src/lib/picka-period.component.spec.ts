@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NGXDaterangePickerMaterialComponent } from './ngx-daterange-picker-material.component';
+import { PickaPeriodComponent } from './picka-period.component';
 
 describe('DateRangeComponent', () => {
-  let component: NGXDaterangePickerMaterialComponent;
-  let fixture: ComponentFixture<NGXDaterangePickerMaterialComponent>;
+  let component: PickaPeriodComponent;
+  let fixture: ComponentFixture<PickaPeriodComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NGXDaterangePickerMaterialComponent ]
+      declarations: [ PickaPeriodComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NGXDaterangePickerMaterialComponent);
+    fixture = TestBed.createComponent(PickaPeriodComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

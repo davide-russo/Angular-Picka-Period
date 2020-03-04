@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ngx-daterange-picker-material-demo": {
+    "angular-picka-period": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -14,7 +14,7 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "aot": true,
-            "outputPath": "dist/ngx-daterange-picker-material-demo",
+            "outputPath": "dist/angular-picka-period",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -59,18 +59,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ngx-daterange-picker-material-demo:build"
+            "browserTarget": "angular-picka-period:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ngx-daterange-picker-material-demo:build:production"
+              "browserTarget": "angular-picka-period:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ngx-daterange-picker-material-demo:build"
+            "browserTarget": "angular-picka-period:build"
           }
         },
         "test": {
@@ -105,21 +105,21 @@
         }
       }
     },
-    "ngx-daterange-picker-material-e2e": {
-      "root": "ngx-daterange-picker-material-e2e/",
+    "angular-picka-period-e2e": {
+      "root": "angular-picka-period-e2e/",
       "projectType": "application",
       "architect": {
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "ngx-daterange-picker-material-e2e/protractor.conf.js",
-            "devServerTarget": "ngx-daterange-picker-material:serve"
+            "protractorConfig": "angular-picka-period-e2e/protractor.conf.js",
+            "devServerTarget": "angular-picka-period:serve"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": "ngx-daterange-picker-material-e2e/tsconfig.e2e.json",
+            "tsConfig": "angular-picka-period-e2e/tsconfig.e2e.json",
             "exclude": [
               "**/node_modules/**"
             ]
@@ -127,39 +127,39 @@
         }
       }
     },
-    "ngx-daterange-picker-material": {
-      "root": "projects/ngx-daterange-picker-material",
-      "sourceRoot": "projects/ngx-daterange-picker-material/src",
+    "ngx-picka-period": {
+      "root": "projects/ngx-picka-period",
+      "sourceRoot": "projects/ngx-picka-period/src",
       "projectType": "library",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "projects/ngx-daterange-picker-material/tsconfig.lib.json",
-            "project": "projects/ngx-daterange-picker-material/ng-package.json"
+            "tsConfig": "projects/ngx-picka-period/tsconfig.lib.json",
+            "project": "projects/ngx-picka-period/ng-package.json"
           },
           "configurations": {
             "production": {
-              "project": "projects/ngx-daterange-picker-material/ng-package.prod.json",
-              "tsConfig": "projects/ngx-daterange-picker-material/tsconfig.lib.prod.json"
+              "project": "projects/ngx-picka-period/ng-package.prod.json",
+              "tsConfig": "projects/ngx-picka-period/tsconfig.lib.prod.json"
             }
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/ngx-daterange-picker-material/src/test.ts",
-            "tsConfig": "projects/ngx-daterange-picker-material/tsconfig.spec.json",
-            "karmaConfig": "projects/ngx-daterange-picker-material/karma.conf.js"
+            "main": "projects/ngx-picka-period/src/test.ts",
+            "tsConfig": "projects/ngx-picka-period/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-picka-period/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/ngx-daterange-picker-material/tsconfig.lib.json",
-              "projects/ngx-daterange-picker-material/tsconfig.spec.json"
+              "projects/ngx-picka-period/tsconfig.lib.json",
+              "projects/ngx-picka-period/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -169,7 +169,7 @@
       }
     }
   },
-  "defaultProject": "ngx-daterange-picker-material-demo",
+  "defaultProject": "angular-picka-period",
   "schematics": {
     "@schematics/angular:component": {
       "styleext": "scss"
