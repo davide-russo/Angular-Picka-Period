@@ -19,11 +19,11 @@
       "dom"
     ],
     "paths": {
-      "ngx-daterange-picker-material": [
-        "dist/ngx-daterange-picker-material"
+      "ngx-picka-period": [
+        "dist/ngx-picka-period"
       ],
-      "ngx-daterange-picker-material/*": [
-        "dist/ngx-daterange-picker-material/*"
+      "ngx-picka-period/*": [
+        "dist/ngx-picka-period/*"
       ]
     }
   }

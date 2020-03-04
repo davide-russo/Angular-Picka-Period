@@ -1,10 +1,10 @@
 import {Directive, ElementRef, HostListener, Input} from '@angular/core';
 
 @Directive({
-    selector: 'input[ngxDtrPicker]',
+    selector: 'input[ngxPickaPeriod]',
     exportAs: 'DatepickerRangeInput'
 })
-export class NGXDatetimeRangePickerMaterial {
+export class PickaPeriodInput {
     public dateRangePicker: any;
 
     @HostListener('focus', ['$event.target'])
@@ -14,7 +14,7 @@ export class NGXDatetimeRangePickerMaterial {
     }
 
     @Input()
-    set ngxDtrPicker(value: any) {
+    set ngxPickaPeriod(value: any) {
         this.dateRangePicker = value;
         this.dateRangePicker
             .dateSubject

@@ -5,19 +5,19 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 
 import {AppComponent} from './app.component';
-import {NGXDaterangePickerMaterialModule} from 'ngx-datetime-range-picker-material';
+import {PickaPeriodModule} from '../../projects/picka-period/src/lib/picka-period.module';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    MatInputModule,
-    MatFormFieldModule,
-    NGXDaterangePickerMaterialModule,
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        MatInputModule,
+        MatFormFieldModule,
+        PickaPeriodModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

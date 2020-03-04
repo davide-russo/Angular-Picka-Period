@@ -12,24 +12,24 @@
     </div>
     <div class="drp-calendar left" >
         <div class="calendar-table">
-            <lib-ngx-dtr-calendar
+            <lib-picka-period-calendar
                 [position]="'left'" 
                 (changeMonth)="changeMonth($event)"
                 (selectStartEndDay)="selectStartEndDay($event)"
                 [range]="range"
-                [dates]="fromSetting"></lib-ngx-dtr-calendar>
+                [dates]="fromSetting"></lib-picka-period-calendar>
         </div>
         <div class="calendar-time"></div>
     </div>
     <div class="drp-calendar right" >
         <div class="calendar-table">
-            <lib-ngx-dtr-calendar
+            <lib-picka-period-calendar
             [position]="'right'"
             (selectStartEndDay)="selectStartEndDay($event)"
             (changeMonth)="changeMonth($event)"       
             [range]="range"
             [dates]="toSetting"
-            ></lib-ngx-dtr-calendar>
+            ></lib-picka-period-calendar>
         </div>
         <div class="calendar-time">
 
