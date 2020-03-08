@@ -1,4 +1,4 @@
-import {ComponentRef, Directive, ElementRef, Injector, Input, OnDestroy} from '@angular/core';
+import {ComponentRef, Directive, ElementRef, HostBinding, Injector, Input, OnDestroy, OnInit} from '@angular/core';
 import {ConnectedPosition, Overlay, OverlayRef, PositionStrategy} from '@angular/cdk/overlay';
 import {ComponentPortal, PortalInjector} from '@angular/cdk/portal';
 import {fromEvent, Subject} from 'rxjs';
@@ -6,10 +6,13 @@ import {fromEvent, Subject} from 'rxjs';
 import {SETTINGS} from './picker.settings';
 import {NgxPickaPeriodComponent} from './ngx-picka-period/ngx-picka-period.component';
 import {takeUntil} from 'rxjs/operators';
+import {NgxPickaPeriodConfig} from './ngx-picka-period-config.model';
 
 @Directive({selector: '[ngxPickaPeriod]'})
-export class NgxPickaPeriodDirective implements OnDestroy {
+export class NgxPickaPeriodDirective implements OnInit, OnDestroy {
   @Input() ngxPickaPeriodConfig: any = {};
+
+  @HostBinding('readonly') readonly = true;
 
   private readonly _connectedPositions: ConnectedPosition[] = [{
     originX: 'start',
@@ -22,12 +25,17 @@ export class NgxPickaPeriodDirective implements OnDestroy {
   private _portalRef: ComponentPortal<NgxPickaPeriodComponent>;
   private _pickerRef: ComponentRef<NgxPickaPeriodComponent>;
   private _overlayRef: OverlayRef;
+  private _value: string;
   private _destroy$: Subject<any> = new Subject();
 
   constructor(private elementRef: ElementRef,
               private injector: Injector,
               private overlay: Overlay) {
-    fromEvent(elementRef.nativeElement, 'click')
+  }
+
+  ngOnInit() {
+    this._value = this.elementRef.nativeElement.value;
+    fromEvent(this.elementRef.nativeElement, 'click')
       .pipe(takeUntil(this._destroy$))
       .subscribe(() => this._openPicker());
   }
@@ -46,7 +54,7 @@ export class NgxPickaPeriodDirective implements OnDestroy {
       .pipe(takeUntil(this._destroy$))
       .subscribe(() => this._closeOverlay());
 
-    this._pickerRef.instance.activePeriod$
+    this._pickerRef.instance.activeValue
       .pipe(takeUntil(this._destroy$))
       .subscribe((period: string) => this._updateElementValue(period));
 
@@ -56,7 +64,11 @@ export class NgxPickaPeriodDirective implements OnDestroy {
   }
 
   private _createPortal(): ComponentPortal<NgxPickaPeriodComponent> {
-    return new ComponentPortal(NgxPickaPeriodComponent, null, this._createInjector(this.ngxPickaPeriodConfig));
+    return new ComponentPortal(
+      NgxPickaPeriodComponent,
+      null,
+      this._createPickerInjector(this.ngxPickaPeriodConfig, this._value)
+    );
   }
 
   private _createOverlay(): OverlayRef {
@@ -69,9 +81,10 @@ export class NgxPickaPeriodDirective implements OnDestroy {
     });
   }
 
-  private _createInjector(config: any): PortalInjector {
+  private _createPickerInjector(config: NgxPickaPeriodConfig, value: string): PortalInjector {
     const injectorTokens = new WeakMap();
     injectorTokens.set(SETTINGS.CONFIG_TOKEN, config);
+    injectorTokens.set(SETTINGS.VALUE_TOKEN, value);
     return new PortalInjector(this.injector, injectorTokens);
   }
 

@@ -5,10 +5,14 @@
         (range)="onRangeSelected($event)"></ngx-picka-period-range-selector>
     </div>
     <div class="calendar left-calendar">
-      <ngx-picka-period-calendar></ngx-picka-period-calendar>
+      <ngx-picka-period-calendar position="left" [range]="range" [date]="viewFrom"
+                                 [isStartDate]="isStartDate" (changeMonth)="changeMonth($event)"
+                                 (selectStartEndDay)="selectStartEndDay($event)"></ngx-picka-period-calendar>
     </div>
     <div class="calendar right-calendar">
-      <ngx-picka-period-calendar></ngx-picka-period-calendar>
+      <ngx-picka-period-calendar position="right" [range]="range" [date]="viewTo"
+                                 [isStartDate]="isStartDate" (changeMonth)="changeMonth($event)"
+                                 (selectStartEndDay)="selectStartEndDay($event)"></ngx-picka-period-calendar>
     </div>
     <div class="controls">
       <ngx-picka-period-controls
