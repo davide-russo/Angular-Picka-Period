@@ -1,8 +1,9 @@
 {
   "extends": "../../tslint.json",
   "rules": {
+    "variable-name": false,
     "directive-selector": [
-      true,
+      false,
       "attribute",
       "lib",
       "camelCase"
@@ -11,6 +12,7 @@
       true,
       "element",
       "lib",
+      "ngx",
       "kebab-case"
     ]
   }

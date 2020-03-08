@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'NGX Picka-Period Demo';
+  public title = 'NGX Picka-Period Demo';
+  public config = {test: 'test'};
 }
