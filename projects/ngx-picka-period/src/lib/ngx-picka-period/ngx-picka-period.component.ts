@@ -1,8 +1,9 @@
 import {Component, Inject, OnDestroy, OnInit} from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
+import {Observable, Subject} from 'rxjs';
+import {Moment} from 'moment';
 
 import {SETTINGS} from '../picker.settings';
-import {Observable, Subject} from 'rxjs';
 
 @Component({
   selector: 'ngx-picka-period',
@@ -33,10 +34,14 @@ import {Observable, Subject} from 'rxjs';
 export class NgxPickaPeriodComponent implements OnInit, OnDestroy {
   public isOpen = false;
 
-  get periodSelected$(): Observable<string> {
-    return this._periodSelected$.asObservable();
+  get activePeriod$(): Observable<string> {
+    return this._activePeriod$.asObservable();
   }
-  private _periodSelected$: Subject<string> = new Subject<string>();
+  private _activePeriod$: Subject<string> = new Subject<string>();
+
+  public set period(period: Moment[]) { this._period = period; }
+  public get period(): Moment[] { return this._period; }
+  private _period: Moment[];
 
   constructor(@Inject(SETTINGS.CONFIG_TOKEN) public config: any) { }
 
@@ -49,7 +54,11 @@ export class NgxPickaPeriodComponent implements OnInit, OnDestroy {
     this.isOpen = false;
   }
 
+  public onRangeSelected(range: Moment[]) {
+    console.log(range.map(date => date.toString()));
+  }
+
   private _updatePeriod(period: string) {
-    this._periodSelected$.next(period);
+    this._activePeriod$.next(period);
   }
 }

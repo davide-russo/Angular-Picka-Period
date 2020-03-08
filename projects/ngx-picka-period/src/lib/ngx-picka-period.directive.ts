@@ -42,7 +42,7 @@ export class NgxPickaPeriodDirective implements OnDestroy {
       .pipe(takeUntil(this._destroy$))
       .subscribe(() => this._closeOverlay(overlayRef));
     this._pickerRef = overlayRef.attach(pickerPortal);
-    this._pickerRef.instance.periodSelected$
+    this._pickerRef.instance.activePeriod$
       .pipe(takeUntil(this._destroy$))
       .subscribe((period: string) => this._updateElementValue(period));
   }

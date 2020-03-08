@@ -1,7 +1,8 @@
 <div class="ngx-picka-period" [@transform]="isOpen ? 'enter' : 'void'">
   <div class="wrapper">
     <div class="range-selector">
-      <ngx-picka-period-range-selector></ngx-picka-period-range-selector>
+      <ngx-picka-period-range-selector
+        (range)="onRangeSelected($event)"></ngx-picka-period-range-selector>
     </div>
     <div class="calendar left-calendar">
       <ngx-picka-period-calendar></ngx-picka-period-calendar>
