@@ -7,7 +7,7 @@ import {SETTINGS} from './picker.settings';
 import {NgxPickaPeriodComponent} from './ngx-picka-period/ngx-picka-period.component';
 import {takeUntil} from 'rxjs/operators';
 
-@Directive({selector: 'input[ngxPickaPeriod]'})
+@Directive({selector: '[ngxPickaPeriod]'})
 export class NgxPickaPeriodDirective implements OnDestroy {
   @Input() ngxPickaPeriodConfig: any = {};
 

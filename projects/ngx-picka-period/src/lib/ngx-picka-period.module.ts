@@ -9,6 +9,7 @@ import {CalendarComponent} from './calendar/calendar.component';
 import {RangeSelectorComponent} from './range-selector/range-selector.component';
 import { ControlsComponent } from './controls/controls.component';
 import {MatListModule} from '@angular/material/list';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import {MatListModule} from '@angular/material/list';
     BrowserAnimationsModule,
     OverlayModule,
     MatListModule,
+    MatButtonModule,
   ],
   exports: [
     NgxPickaPeriodComponent,
