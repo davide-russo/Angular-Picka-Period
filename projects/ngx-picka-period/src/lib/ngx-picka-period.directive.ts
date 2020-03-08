@@ -1,12 +1,11 @@
-import {Directive, ElementRef, Injectable, Injector, Input} from '@angular/core';
-import {ConnectedPosition, Overlay, PositionStrategy} from '@angular/cdk/overlay';
+import {Directive, ElementRef, Injector, Input} from '@angular/core';
+import {ConnectedPosition, Overlay, OverlayRef, PositionStrategy} from '@angular/cdk/overlay';
 import {ComponentPortal, PortalInjector} from '@angular/cdk/portal';
 import {fromEvent} from 'rxjs';
 
 import {SETTINGS} from './ngx-picka-period.settings';
 import {NgxPickaPeriodComponent} from './ngx-picka-period/ngx-picka-period.component';
 
-@Injectable()
 @Directive({selector: 'input[ngxPickaPeriod]'})
 export class NgxPickaPeriodDirective {
   @Input() ngxPickaPeriodConfig: any = {};
@@ -26,21 +25,27 @@ export class NgxPickaPeriodDirective {
   }
 
   private _openPicker() {
-    const pickaPeriodPortal = new ComponentPortal(NgxPickaPeriodComponent, null, this._createPickerInjector(this.ngxPickaPeriodConfig));
+    const pickaPeriodPortal = this._createPortal();
+    const overlayRef = this._createOverlay();
+    overlayRef.attach(pickaPeriodPortal);
+    overlayRef.backdropClick().subscribe(() => overlayRef.dispose());
+  }
 
-    const overlayRef = this.overlay.create({
+  private _createPortal(): ComponentPortal<NgxPickaPeriodComponent> {
+    return new ComponentPortal(NgxPickaPeriodComponent, null, this._createInjector(this.ngxPickaPeriodConfig));
+  }
+
+  private _createOverlay(): OverlayRef {
+    return this.overlay.create({
       height: SETTINGS.PICKER.HEIGHT,
       width: SETTINGS.PICKER.WIDTH,
       hasBackdrop: true,
       backdropClass: null,
       positionStrategy: this._createPositionStrategy()
     });
-
-    overlayRef.attach(pickaPeriodPortal);
-    overlayRef.backdropClick().subscribe(() => overlayRef.dispose());
   }
 
-  private _createPickerInjector(config: any): PortalInjector {
+  private _createInjector(config: any): PortalInjector {
     const injectorTokens = new WeakMap();
     injectorTokens.set(SETTINGS.CONFIG_TOKEN, config);
     return new PortalInjector(this.injector, injectorTokens);
