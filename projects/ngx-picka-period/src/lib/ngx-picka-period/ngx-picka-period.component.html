@@ -1,1 +1,16 @@
-<div class="ngx-picka-period" [@transform]="isOpen ? 'enter' : 'void'"></div>
+<div class="ngx-picka-period" [@transform]="isOpen ? 'enter' : 'void'">
+  <div class="wrapper">
+    <div class="range-selector">
+      <ngx-picka-period-range-selector></ngx-picka-period-range-selector>
+    </div>
+    <div class="calendar left-calendar">
+      <ngx-picka-period-calendar></ngx-picka-period-calendar>
+    </div>
+    <div class="calendar right-calendar">
+      <ngx-picka-period-calendar></ngx-picka-period-calendar>
+    </div>
+    <div class="controls">
+      <ngx-picka-period-controls></ngx-picka-period-controls>
+    </div>
+  </div>
+</div>

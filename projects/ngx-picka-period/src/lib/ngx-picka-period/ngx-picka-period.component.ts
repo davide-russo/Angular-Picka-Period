@@ -1,7 +1,8 @@
 import {Component, Inject, OnDestroy, OnInit} from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 
-import {SETTINGS} from '../ngx-picka-period.settings';
+import {SETTINGS} from '../picker.settings';
+import {Observable, Subject} from 'rxjs';
 
 @Component({
   selector: 'ngx-picka-period',
@@ -32,6 +33,11 @@ import {SETTINGS} from '../ngx-picka-period.settings';
 export class NgxPickaPeriodComponent implements OnInit, OnDestroy {
   public isOpen = false;
 
+  get periodSelected$(): Observable<string> {
+    return this._periodSelected$.asObservable();
+  }
+  private _periodSelected$: Subject<string> = new Subject<string>();
+
   constructor(@Inject(SETTINGS.CONFIG_TOKEN) public config: any) { }
 
   ngOnInit() {
@@ -41,5 +47,9 @@ export class NgxPickaPeriodComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.isOpen = false;
+  }
+
+  private _updatePeriod(period: string) {
+    this._periodSelected$.next(period);
   }
 }

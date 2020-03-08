@@ -1,6 +1,7 @@
 {
   "extends": "../../tslint.json",
   "rules": {
+    "no-empty-interface": false,
     "variable-name": false,
     "directive-selector": [
       false,
