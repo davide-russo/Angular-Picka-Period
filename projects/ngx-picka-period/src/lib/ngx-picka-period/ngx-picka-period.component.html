@@ -1,4 +1,4 @@
-<div class="ngx-picka-period" [@transform]="isOpen ? 'enter' : 'void'">
+<div class="ngx-picka-period" [@slideInFromTop]="isOpen ? 'enter' : 'void'">
   <div class="wrapper">
     <div class="range-selector">
       <ngx-picka-period-range-selector
@@ -11,7 +11,8 @@
       <ngx-picka-period-calendar></ngx-picka-period-calendar>
     </div>
     <div class="controls">
-      <ngx-picka-period-controls></ngx-picka-period-controls>
+      <ngx-picka-period-controls
+        (apply)="onApply()" (cancel)="onCancel()"></ngx-picka-period-controls>
     </div>
   </div>
 </div>

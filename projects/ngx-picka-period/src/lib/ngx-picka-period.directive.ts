@@ -16,10 +16,12 @@ export class NgxPickaPeriodDirective implements OnDestroy {
     originY: 'bottom',
     overlayX: 'start',
     overlayY: 'top',
-    offsetY: 10
+    offsetY: SETTINGS.PICKER.OFFSET
   }];
 
+  private _portalRef: ComponentPortal<NgxPickaPeriodComponent>;
   private _pickerRef: ComponentRef<NgxPickaPeriodComponent>;
+  private _overlayRef: OverlayRef;
   private _destroy$: Subject<any> = new Subject();
 
   constructor(private elementRef: ElementRef,
@@ -36,15 +38,21 @@ export class NgxPickaPeriodDirective implements OnDestroy {
   }
 
   private _openPicker() {
-    const pickerPortal = this._createPortal();
-    const overlayRef = this._createOverlay();
-    overlayRef.backdropClick()
+    this._portalRef = this._createPortal();
+    this._overlayRef = this._createOverlay();
+    this._pickerRef = this._overlayRef.attach(this._portalRef);
+
+    this._overlayRef.backdropClick()
       .pipe(takeUntil(this._destroy$))
-      .subscribe(() => this._closeOverlay(overlayRef));
-    this._pickerRef = overlayRef.attach(pickerPortal);
+      .subscribe(() => this._closeOverlay());
+
     this._pickerRef.instance.activePeriod$
       .pipe(takeUntil(this._destroy$))
       .subscribe((period: string) => this._updateElementValue(period));
+
+    this._pickerRef.instance.close$
+      .pipe(takeUntil(this._destroy$))
+      .subscribe(() => this._closeOverlay());
   }
 
   private _createPortal(): ComponentPortal<NgxPickaPeriodComponent> {
@@ -74,9 +82,11 @@ export class NgxPickaPeriodDirective implements OnDestroy {
       .withPositions(this._connectedPositions);
   }
 
-  private _closeOverlay(overlayRef: OverlayRef) {
-    overlayRef.dispose();
+  private _closeOverlay() {
+    this._overlayRef.dispose();
+    this._overlayRef = null;
     this._pickerRef = null;
+    this._portalRef = null;
   }
 
   private _updateElementValue(value: any) {
