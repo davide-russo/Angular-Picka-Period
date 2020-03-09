@@ -1,7 +1,7 @@
 import {Component, Inject, OnDestroy, OnInit} from '@angular/core';
 import {Observable, Subject} from 'rxjs';
-import * as _moment from 'moment';
 import {Moment} from 'moment';
+import * as _moment from 'moment';
 
 import {SETTINGS} from '../picker.settings';
 import {NgxPickaPeriodConfig} from '../ngx-picka-period-config.model';
@@ -18,6 +18,7 @@ const moment = _moment;
 export class NgxPickaPeriodComponent implements OnInit, OnDestroy {
   public isOpen = false;
   public isStartDate = true;
+  public incompleteRange = false;
 
   get activeValue(): Observable<string> { return this._activeValue.asObservable(); }
   private _activeValue: Subject<string> = new Subject<string>();
@@ -53,11 +54,13 @@ export class NgxPickaPeriodComponent implements OnInit, OnDestroy {
 
   public onRangeSelected(range: Moment[]) {
     this.range = range;
+    this.changeViewByDay(this.range[0]);
     this.updateDate();
   }
 
   public onApply() {
     this.updateDate();
+    this._close$.next();
   }
 
   public onCancel() {
@@ -68,7 +71,12 @@ export class NgxPickaPeriodComponent implements OnInit, OnDestroy {
     this._activeValue.next(period);
   }
 
-  changeMonth(offset: number) {
+  changeViewByDay(day: Moment) {
+    this.viewFrom = moment(day);
+    this.viewTo = moment(day).add(1, 'month');
+  }
+
+  changeViewByMonthsOffset(offset: number) {
     if (offset === -1) {
       this.viewFrom = moment(this.viewFrom).subtract(1, 'month');
       this.viewTo = moment(this.viewTo).subtract(1, 'month');
@@ -93,6 +101,7 @@ export class NgxPickaPeriodComponent implements OnInit, OnDestroy {
         this.isStartDate = true;
       }
     }
+    this.incompleteRange = !(this.range[0] && this.range[1]);
   }
 
   updateDate() {

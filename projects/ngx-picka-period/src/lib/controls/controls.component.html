@@ -1,4 +1,4 @@
 <div class="controls-wrapper">
   <button mat-button (click)="cancel.emit()">Cancel</button>
-  <button mat-button (click)="apply.emit()">Apply</button>
+  <button mat-button (click)="apply.emit()" [disabled]="disableApply">Apply</button>
 </div>

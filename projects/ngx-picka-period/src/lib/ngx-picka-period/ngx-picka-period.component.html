@@ -6,16 +6,16 @@
     </div>
     <div class="calendar left-calendar">
       <ngx-picka-period-calendar position="left" [range]="range" [date]="viewFrom"
-                                 [isStartDate]="isStartDate" (changeMonth)="changeMonth($event)"
+                                 [isStartDate]="isStartDate" (changeMonth)="changeViewByMonthsOffset($event)"
                                  (selectStartEndDay)="selectStartEndDay($event)"></ngx-picka-period-calendar>
     </div>
     <div class="calendar right-calendar">
       <ngx-picka-period-calendar position="right" [range]="range" [date]="viewTo"
-                                 [isStartDate]="isStartDate" (changeMonth)="changeMonth($event)"
+                                 [isStartDate]="isStartDate" (changeMonth)="changeViewByMonthsOffset($event)"
                                  (selectStartEndDay)="selectStartEndDay($event)"></ngx-picka-period-calendar>
     </div>
     <div class="controls">
-      <ngx-picka-period-controls
+      <ngx-picka-period-controls [disableApply]="incompleteRange"
         (apply)="onApply()" (cancel)="onCancel()"></ngx-picka-period-controls>
     </div>
   </div>

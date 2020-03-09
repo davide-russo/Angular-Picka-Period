@@ -34,7 +34,6 @@ export class NgxPickaPeriodDirective implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this._value = this.elementRef.nativeElement.value;
     fromEvent(this.elementRef.nativeElement, 'click')
       .pipe(takeUntil(this._destroy$))
       .subscribe(() => this._openPicker());
@@ -46,6 +45,7 @@ export class NgxPickaPeriodDirective implements OnInit, OnDestroy {
   }
 
   private _openPicker() {
+    this._value = this.elementRef.nativeElement.value;
     this._portalRef = this._createPortal();
     this._overlayRef = this._createOverlay();
     this._pickerRef = this._overlayRef.attach(this._portalRef);
@@ -103,6 +103,7 @@ export class NgxPickaPeriodDirective implements OnInit, OnDestroy {
   }
 
   private _updateElementValue(value: any) {
+    console.log(value);
     this.elementRef.nativeElement.value = value;
   }
 }

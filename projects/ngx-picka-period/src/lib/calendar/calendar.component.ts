@@ -82,11 +82,11 @@ export class CalendarComponent implements OnChanges {
 
   private _renderCalendar() {
     this.year = +this.date.format('YYYY');
-    this.monthName = moment.months(this.date as any)[this._month];
     this._month = +this.date.format('M') - 1;
     this._hour = +this.date.format('H');
     this._minute = 0;
     this._second = 0;
+    this.monthName = moment.months(this.date as any)[this._month];
 
     const firstDayLocale = moment.localeData().firstDayOfWeek();
     const firstDay = moment([this.year, this._month, 1]);
