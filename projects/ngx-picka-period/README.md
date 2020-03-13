@@ -1,24 +1,84 @@
-# NgxPickaPeriod
+Angular Picka Period
+========================
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.5.
+**Angular date time picker**
+**This package supports Angular 9**
 
-## Code scaffolding
 
-Run `ng generate component component-name --project ngx-picka-period` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-picka-period`.
-> Note: Don't forget to add `--project ngx-picka-period` or else it will be added to the default project in your `angular.json` file. 
+Description
+-------
+Angular responsive date time picker. Online demo(StackBlitz) is [here](https://ngx-picka-period.stackblitz.io).
+This picker is responsive design, so feel free to try it in your desktops, tablets and mobile devices.
 
-## Build
+Inspiretion
+--------
+Based on the work of: [codetok](https://github.com/codetok/angular-date-range-picker) and [daterangepicker](http://www.daterangepicker.com/)
 
-Run `ng build ngx-picka-period` to build the project. The build artifacts will be stored in the `dist/` directory.
+How to Use
+-------
 
-## Publishing
+ 1. Install with [npm](https://www.npmjs.com):  `npm i ngx-picka-picker`
+ 2. Import the module __NgxPickaPeriodModule__ and add it to your module imports
+ ```typescript
+    import { NgxPickaPeriodModule } from 'ngx-picka-period';
 
-After building your library with `ng build ngx-picka-period`, go to the dist folder `cd dist/ngx-picka-period` and run `npm publish`.
+    imports: [
+        NgxPickaPeriodModule
+       // ...
+    ],
 
-## Running unit tests
+```
+ 3. Connect the picker to the template with __ngxPickaPeriod__ directive to your __matInput__, you also have to provide a __NgxPickaPeriodConfig__ to the library.
+ ```html
+    <mat-form-field>
+      <input matInput placeholder="Picka Period" ngxPickaPeriod [ngxPickaPeriodConfig]="config"
+             [value]="value">
+    </mat-form-field>
+```
+ 4. __ENJOY IT!__
+    
 
-Run `ng test ngx-picka-period` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Animation
+-------
+This picker uses angular animations to improve the user experience, 
+therefore you need to install `@angular/animations` and import `BrowserAnimationsModule` to your application. 
+```
+npm install @angular/animations --save
+```
+```typescript
+import {BrowserModule} from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
-## Further help
+@NgModule({
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        //...
+    ],
+    //...
+})
+export class YourAppModule { }
+```
+If you prefer to disable animation effect, use `NoopAnimationsModule` instead.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Dependencies
+-------
+```
+    "@angular/common": "^9.0.5",
+    "@angular/core": "^9.0.5",
+    "@angular/material": "^9.1.1",
+    "@angular/animations": "^9.0.5",
+    "moment": "^2.24.0"
+```
+
+Demo
+-------
+- Online demo(StackBlitz) is [here]()
+
+License
+-------
+* License: MIT
+
+Author
+-------
+**Davide-Russo**

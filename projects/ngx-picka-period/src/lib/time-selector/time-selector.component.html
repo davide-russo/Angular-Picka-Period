@@ -1,6 +1,6 @@
 <div class="time-selector-wrapper">
-  <input type="number" [disabled]="disabled" (input)="onHoursChange(+hours.value)" #hours>
+  <input type="number" [disabled]="disabled" (input)="onTimeComponentChange(+hours.value, 'hours')" #hours>
   <span class="time-divider">:</span>
-  <input type="number" [disabled]="disabled" (input)="onMinutesChange(+minutes.value)" #minutes>
+  <input type="number" [disabled]="disabled" (input)="onTimeComponentChange(+minutes.value, 'minutes')" #minutes>
   <mat-icon class="time-now">access_time</mat-icon>
 </div>

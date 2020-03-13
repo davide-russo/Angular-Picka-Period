@@ -3,7 +3,7 @@ import {Observable, Subject} from 'rxjs';
 import * as _moment from 'moment';
 import {Moment} from 'moment';
 
-import {SLIDE_IN_FROM_TOP} from './animation';
+import {SLIDE_IN_FROM_TOP} from './ngx-picka-period.animation';
 import {SETTINGS} from '../picker.settings';
 import {NgxPickaPeriodConfig} from '../ngx-picka-period-config.model';
 import {TimeSelectorComponent} from '../time-selector/time-selector.component';

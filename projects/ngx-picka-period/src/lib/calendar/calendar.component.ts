@@ -3,13 +3,9 @@ import * as _moment from 'moment';
 import {Moment} from 'moment';
 
 import {MomentRange} from '../models/moment-range.model';
+import {DayClassesCheck} from '../models/day-classes-check.model';
 
 const moment = _moment;
-
-interface DayClassesCheck {
-  classes: string[];
-  check: any;
-}
 
 @Component({
   selector: 'ngx-picka-period-calendar',

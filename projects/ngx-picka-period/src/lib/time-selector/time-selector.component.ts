@@ -29,14 +29,8 @@ export class TimeSelectorComponent implements AfterViewInit {
     this._updateViewTime();
   }
 
-  public onMinutesChange(minutes: number) {
-    this.time.minutes(this._checkTimeComponent(minutes, 'minutes'));
-    this._updateViewTime();
-    this.selectTime.emit(this.time);
-  }
-
-  public onHoursChange(hours: number) {
-    this.time.hours(this._checkTimeComponent(hours, 'hours'));
+  public onTimeComponentChange(timeComponent: number, type: 'hours' | 'minutes') {
+    this.time[type](this._checkTimeComponent(timeComponent, type));
     this._updateViewTime();
     this.selectTime.emit(this.time);
   }
