@@ -1,0 +1,7 @@
+@import "../layout-variables";
+
+.controls-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: $regular-padding;
+}

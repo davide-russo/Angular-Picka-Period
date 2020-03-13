@@ -1,13 +1,7 @@
 <mat-form-field>
-    <input matInput placeholder="date range" [ngxPickaPeriod]="daterangePicker" value="3/1/2020-3/3/2020" >
+  <input matInput placeholder="Picka Period" ngxPickaPeriod [ngxPickaPeriodConfig]="config"
+         [value]="value">
 </mat-form-field>
-<div style="position: relative;  ">
-    <lib-picka-period #daterangePicker  ></lib-picka-period>
-</div>
-
-<mat-form-field>
-    <input matInput placeholder="date range" [ngxPickaPeriod]="daterangePicker2" value="3/1/2020-3/3/2020" >
-</mat-form-field>
-<div style="position: relative; ">
-    <lib-picka-period #daterangePicker2></lib-picka-period>
-</div>
+<button mat-raised-button color="primary" (click)="themeSwitcher()">
+  Switch Theme&nbsp;<mat-icon>invert_colors</mat-icon>
+</button>

@@ -1,0 +1,22 @@
+@import '~@angular/material/theming';
+
+@mixin ngx-picka-period-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, accent);
+  $background: map-get($theme, background);
+
+  .ngx-picka-period {
+    background: mat-color($background, card);
+
+    .range-selector {
+      background: mat-color($primary);
+
+      ngx-picka-period-range-selector {
+        mat-action-list > button {
+          color: white;
+        }
+      }
+    }
+  }
+}

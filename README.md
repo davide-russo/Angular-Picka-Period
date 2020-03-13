@@ -74,15 +74,3 @@ Dependencies
     "@angular/material": "^9.0.0",
     "moment": "^2.24.0"
 ```
-
-Demo
--------
-- Online demo(StackBlitz) is [here]()
-
-License
--------
-* License: MIT
-
-Author
--------
-**Davide-Russo**
