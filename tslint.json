@@ -1,6 +1,23 @@
 {
   "extends": "tslint:recommended",
   "rules": {
+    "no-empty-interface": false,
+    "variable-name": false,
+    "member-ordering": false,
+    "no-inferrable-types": false,
+    "directive-selector": [
+      false,
+      "attribute",
+      "lib",
+      "camelCase"
+    ],
+    "component-selector": [
+      true,
+      "element",
+      "lib",
+      "ngx",
+      "kebab-case"
+    ],
     "array-type": false,
     "arrow-parens": false,
     "deprecation": {
@@ -9,18 +26,6 @@
     "component-class-suffix": true,
     "contextual-lifecycle": true,
     "directive-class-suffix": true,
-    "directive-selector": [
-      true,
-      "attribute",
-      "app",
-      "camelCase"
-    ],
-    "component-selector": [
-      true,
-      "element",
-      "app",
-      "kebab-case"
-    ],
     "import-blacklist": [
       true,
       "rxjs/Rx"
@@ -32,17 +37,6 @@
       140
     ],
     "member-access": false,
-    "member-ordering": [
-      true,
-      {
-        "order": [
-          "static-field",
-          "instance-field",
-          "static-method",
-          "instance-method"
-        ]
-      }
-    ],
     "no-consecutive-blank-lines": false,
     "no-console": [
       true,
@@ -53,10 +47,6 @@
       "trace"
     ],
     "no-empty": false,
-    "no-inferrable-types": [
-      true,
-      "ignore-params"
-    ],
     "no-non-null-assertion": true,
     "no-redundant-jsdoc": true,
     "no-switch-case-fall-through": true,

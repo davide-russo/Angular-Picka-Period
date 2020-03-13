@@ -5,18 +5,28 @@
         (range)="onRangeSelected($event)"></ngx-picka-period-range-selector>
     </div>
     <div class="calendar left-calendar">
-      <ngx-picka-period-calendar position="left" [range]="range" [date]="viewFrom"
+      <ngx-picka-period-calendar position="from" [period]="period" [calendarView]="calendarViewFrom"
                                  [isStartDate]="isStartDate" (changeMonth)="changeViewByMonthsOffset($event)"
-                                 (selectStartEndDay)="selectStartEndDay($event)"></ngx-picka-period-calendar>
+                                 (selectDay)="onSelectDay($event)" #dayFrom></ngx-picka-period-calendar>
+    </div>
+    <div class="time-selector left-time-selector">
+      <ngx-picka-period-time-selector [time]="period.from" [disabled]="!isStartDate"
+                                      (selectTime)="onSelectTime($event, 'from')"
+                                      #timeFrom></ngx-picka-period-time-selector>
     </div>
     <div class="calendar right-calendar">
-      <ngx-picka-period-calendar position="right" [range]="range" [date]="viewTo"
+      <ngx-picka-period-calendar position="to" [period]="period" [calendarView]="calendarViewTo"
                                  [isStartDate]="isStartDate" (changeMonth)="changeViewByMonthsOffset($event)"
-                                 (selectStartEndDay)="selectStartEndDay($event)"></ngx-picka-period-calendar>
+                                 (selectDay)="onSelectDay($event)" #dayTo></ngx-picka-period-calendar>
+    </div>
+    <div class="time-selector right-time-selector">
+      <ngx-picka-period-time-selector [time]="period.to" [disabled]="!isStartDate"
+                                      (selectTime)="onSelectTime($event, 'to')"
+                                      #timeTo></ngx-picka-period-time-selector>
     </div>
     <div class="controls">
       <ngx-picka-period-controls [disableApply]="incompleteRange"
-        (apply)="onApply()" (cancel)="onCancel()"></ngx-picka-period-controls>
+                                 (apply)="onApply()" (cancel)="onCancel()"></ngx-picka-period-controls>
     </div>
   </div>
 </div>

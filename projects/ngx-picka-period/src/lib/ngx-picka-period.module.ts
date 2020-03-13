@@ -7,9 +7,12 @@ import {NgxPickaPeriodComponent} from './ngx-picka-period/ngx-picka-period.compo
 import {NgxPickaPeriodDirective} from './ngx-picka-period.directive';
 import {CalendarComponent} from './calendar/calendar.component';
 import {RangeSelectorComponent} from './range-selector/range-selector.component';
-import { ControlsComponent } from './controls/controls.component';
+import {ControlsComponent} from './controls/controls.component';
 import {MatListModule} from '@angular/material/list';
 import {MatButtonModule} from '@angular/material/button';
+import {TimeSelectorComponent} from './time-selector/time-selector.component';
+import {FormsModule} from '@angular/forms';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,8 @@ import {MatButtonModule} from '@angular/material/button';
     NgxPickaPeriodDirective,
     CalendarComponent,
     RangeSelectorComponent,
-    ControlsComponent
+    ControlsComponent,
+    TimeSelectorComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,6 +29,8 @@ import {MatButtonModule} from '@angular/material/button';
     OverlayModule,
     MatListModule,
     MatButtonModule,
+    FormsModule,
+    MatIconModule
   ],
   exports: [
     NgxPickaPeriodComponent,

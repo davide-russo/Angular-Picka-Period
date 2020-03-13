@@ -2,6 +2,8 @@ import {Component, EventEmitter, Input, OnChanges, Output} from '@angular/core';
 import * as _moment from 'moment';
 import {Moment} from 'moment';
 
+import {MomentRange} from '../models/moment-range.model';
+
 const moment = _moment;
 
 interface DayClassesCheck {
@@ -16,11 +18,11 @@ interface DayClassesCheck {
 })
 export class CalendarComponent implements OnChanges {
   @Output() changeMonth = new EventEmitter();
-  @Output() selectStartEndDay = new EventEmitter();
+  @Output() selectDay = new EventEmitter();
 
-  @Input() position: 'left' | 'right';
-  @Input() range: Moment[];
-  @Input() date: Moment;
+  @Input() position: 'from' | 'to';
+  @Input() period: MomentRange;
+  @Input() calendarView: Moment;
   @Input() isStartDate: boolean;
 
   public daysOfWeek = moment.weekdaysMin();
@@ -44,15 +46,15 @@ export class CalendarComponent implements OnChanges {
     },
     {
       classes: ['in-range'],
-      check: (day: Moment) => day > moment(this.range[0]) && day < moment(this.range[1])
+      check: (day: Moment) => day > moment(this.period.from) && day < moment(this.period.to)
     },
     {
       classes: ['active', 'start-date'],
-      check: (day: Moment) => day.isSame(this.range[0], 'day')
+      check: (day: Moment) => day.isSame(this.period.from, 'day')
     },
     {
       classes: ['active', 'end-date'],
-      check: (day: Moment) => day.isSame(this.range[1], 'day')
+      check: (day: Moment) => day.isSame(this.period.to, 'day')
     }
   ];
 
@@ -60,14 +62,6 @@ export class CalendarComponent implements OnChanges {
 
   ngOnChanges() {
     this._renderCalendar();
-  }
-
-  public selectDay(day: Moment) {
-    this.selectStartEndDay.emit(day);
-  }
-
-  public nextMonth(offset: number) {
-    this.changeMonth.emit(offset);
   }
 
   public getDayClasses(day: Moment): string {
@@ -81,12 +75,12 @@ export class CalendarComponent implements OnChanges {
   }
 
   private _renderCalendar() {
-    this.year = +this.date.format('YYYY');
-    this._month = +this.date.format('M') - 1;
-    this._hour = +this.date.format('H');
-    this._minute = 0;
+    this.year = +this.calendarView.format('YYYY');
+    this._month = +this.calendarView.format('MM') - 1;
+    this._hour = +this.calendarView.format('HH');
+    this._minute = +this.calendarView.format('mm');
     this._second = 0;
-    this.monthName = moment.months(this.date as any)[this._month];
+    this.monthName = moment.months(this.calendarView as any)[this._month];
 
     const firstDayLocale = moment.localeData().firstDayOfWeek();
     const firstDay = moment([this.year, this._month, 1]);

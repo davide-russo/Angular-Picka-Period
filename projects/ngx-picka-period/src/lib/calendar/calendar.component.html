@@ -1,15 +1,13 @@
 <table class="table-condensed">
   <thead>
   <tr>
-    <th class="prev available" *ngIf="position==='left'" (click)="nextMonth(-1)">
+    <th class="prev available" *ngIf="position==='from'" (click)="changeMonth.emit(-1)">
       <span></span>
     </th>
     <th colspan="5" class="month">
       {{monthName}} {{year}}
     </th>
-    <th>
-    </th>
-    <th class="next available"  *ngIf="position==='right'" (click)="nextMonth(1)">
+    <th class="next available"  *ngIf="position==='to'" (click)="changeMonth.emit(1)">
       <span></span>
     </th>
   </tr>
@@ -18,7 +16,7 @@
   </tr>
   </thead>
   <tr *ngFor="let row of calendar">
-    <td class="week" *ngFor="let day of row" [attr.class]="getDayClasses(day)" (click)="selectDay(day)">
+    <td class="week" *ngFor="let day of row" [attr.class]="getDayClasses(day)" (click)="selectDay.emit(day)">
       {{day.date()}}
     </td>
   </tr>

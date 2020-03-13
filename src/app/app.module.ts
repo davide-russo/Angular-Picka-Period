@@ -6,6 +6,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import {NgxPickaPeriodModule} from '../../projects/ngx-picka-period/src/lib/ngx-picka-period.module';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import {NgxPickaPeriodModule} from '../../projects/ngx-picka-period/src/lib/ngx-
     BrowserAnimationsModule,
     NgxPickaPeriodModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

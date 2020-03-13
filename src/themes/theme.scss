@@ -1,0 +1,26 @@
+@import '~@angular/material/theming';
+@import '../../projects/ngx-picka-period/src/lib/ngx-picka-period.theme';
+
+@include mat-core();
+
+$light-app-primary: mat-palette($mat-teal);
+$light-app-accent:  mat-palette($mat-pink, A200, A100, A400);
+$light-warn:    mat-palette($mat-orange);
+$light-app-theme:   mat-light-theme($light-app-primary, $light-app-accent, $light-warn);
+
+@include angular-material-theme($light-app-theme);
+
+$dark-primary: mat-palette($mat-purple);
+$dark-accent:  mat-palette($mat-amber, A200, A100, A400);
+$dark-warn:    mat-palette($mat-deep-orange);
+$dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+
+.dark-theme {
+  @include angular-material-theme($dark-theme);
+  @include ngx-picka-period-theme($dark-theme);
+}
+
+.light-theme {
+  @include angular-material-theme($light-app-theme);
+  @include ngx-picka-period-theme($light-app-theme);
+}
