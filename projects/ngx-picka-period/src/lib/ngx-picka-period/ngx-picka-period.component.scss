@@ -8,7 +8,7 @@
   width: 100%;
   height: 100%;
   border-radius: 4px;
-  box-shadow: 2px 6px 6px 0 rgba(0, 0, 0, .25);
+  box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.2);
 
   .wrapper {
     height: 100%;
@@ -17,6 +17,10 @@
       grid-area: range-selector;
       width: $range-selector-width;
       border-radius: 4px 0 0 4px;
+    }
+
+    .filler {
+      grid-area: filler;
     }
 
     .controls {
@@ -54,6 +58,10 @@
       "range-selector left-calendar right-calendar"
       "range-selector left-calendar right-calendar"
       "range-selector left-time-selector right-time-selector"
-      "range-selector controls controls";
+      "range-selector filler controls";
+
+    .left-calendar, .left-time-selector, .filler {
+      box-shadow: 1px 0 0 0 rgba(0, 0, 0, .2);
+    }
   }
 }

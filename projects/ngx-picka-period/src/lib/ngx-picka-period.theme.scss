@@ -20,7 +20,7 @@
 
     .time-selector {
       .time-selector-wrapper {
-        background: mat-color($primary, 200, .50);
+        background: mat-color($primary, 200, .5);
 
         .time-selector-input {
           background: transparent;
@@ -30,7 +30,15 @@
     }
 
     .calendar {
+      .calendar-wrapper {
+        .calendar-header-controls {
+          color: mat-color($foreground, text, .6);
+        }
 
+        .calendar-header-week {
+          color: mat-color($foreground, text, .4);
+        }
+      }
     }
   }
 }

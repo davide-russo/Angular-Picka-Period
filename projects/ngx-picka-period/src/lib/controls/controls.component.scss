@@ -7,6 +7,8 @@
   padding-right: $regular-padding;
 
   .control-btn {
-    margin: $half-padding 0;
+    margin-bottom: $half-padding;
+    text-transform: uppercase;
+    font-size: 13px;
   }
 }
