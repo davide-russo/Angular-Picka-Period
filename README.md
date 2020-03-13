@@ -18,27 +18,22 @@ How to Use
 -------
 
  1. Install with [npm](https://www.npmjs.com):  `npm i ngx-picka-picker`
- 2. Import the module __PickaPeriodModule__ and add it to your module imports
+ 2. Import the module __NgxPickaPeriodModule__ and add it to your module imports
  ```typescript
-    import { PickaPeriodModule } from 'ngx-picka-period';
+    import { NgxPickaPeriodModule } from 'ngx-picka-period';
 
     imports: [
-        PickaPeriodModule
+        NgxPickaPeriodModule
        // ...
     ],
 
 ```
- 3. Connect the picker to the template with __lib-picka-period__ to your __matInput__ 
+ 3. Connect the picker to the template with __ngxPickaPeriod__ directive to your __matInput__, you also have to provide a __NgxPickaPeriodConfig__ to the library.
  ```html
     <mat-form-field>
-        <input matInput 
-        placeholder="Select a date range" 
-        [ngxPickaPeriod] = "picker" 
-        value = "3/1/2020-3/3/2020">
+      <input matInput placeholder="Picka Period" ngxPickaPeriod [ngxPickaPeriodConfig]="config"
+             [value]="value">
     </mat-form-field>
-    <div style="position: relative;">
-        <lib-picka-period #picker></lib-ngx-dtr-picker>
-    </div>
 ```
  4. __ENJOY IT!__
     
@@ -69,8 +64,21 @@ If you prefer to disable animation effect, use `NoopAnimationsModule` instead.
 Dependencies
 -------
 ```
-    "@angular/common": "^9.0.4",
-    "@angular/core": "^9.0.4",
-    "@angular/material": "^9.0.0",
+    "@angular/common": "^9.0.5",
+    "@angular/core": "^9.0.5",
+    "@angular/material": "^9.1.1",
+    "@angular/animations": "^9.0.5",
     "moment": "^2.24.0"
 ```
+
+Demo
+-------
+- Online demo(StackBlitz) is [here]()
+
+License
+-------
+* License: MIT
+
+Author
+-------
+**Davide-Russo**
