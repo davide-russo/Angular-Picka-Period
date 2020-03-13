@@ -1,7 +1,16 @@
-$time-selector-height: 64px;
-$controls-height: 36px;
-$calendar-height: 217px;
+$time-selector-height: 50px;
+
+$controls-height: 52px;
+$calendar-height: 280px;
 $calendar-width: 256px;
+$calendar-control: 24px;
+$calendar-body-height: 184px;
+$calendar-cell: 32px;
+
 $range-selector-width: 168px;
+
 $regular-padding: 16px;
-$bottom-padding: calc(#{$regular-padding} / 2);
+$mid-padding: 12px;
+$half-padding: calc(#{$regular-padding} / 2);
+
+$selection: 28px;

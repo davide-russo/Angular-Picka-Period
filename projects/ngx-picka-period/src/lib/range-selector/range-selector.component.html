@@ -1,4 +1,4 @@
-<mat-action-list>
-  <button mat-list-item (click)="option.action()"
+<mat-action-list class="range-selector-list">
+  <button class="range-selector-option" mat-list-item (click)="option.action()"
           *ngFor="let option of rangeOptions">{{option.label}}</button>
 </mat-action-list>

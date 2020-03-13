@@ -1,5 +1,8 @@
 import {AfterViewInit, Component, ElementRef, EventEmitter, Input, Output, ViewChild} from '@angular/core';
 import {Moment} from 'moment';
+import * as _moment from 'moment';
+
+const moment = _moment;
 
 @Component({
   selector: 'ngx-picka-period-time-selector',
@@ -40,6 +43,13 @@ export class TimeSelectorComponent implements AfterViewInit {
       this.hours.nativeElement.value = this.time.format('HH');
       this.minutes.nativeElement.value = this.time.format('mm');
     }
+  }
+
+  public setNow() {
+    const now = moment();
+    this.time.hours(now.hours()).minutes(now.minutes());
+    this._updateViewTime();
+    this.selectTime.emit(this.time);
   }
 
   private _checkTimeComponent(component: any, type: 'hours' | 'minutes'): number {

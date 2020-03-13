@@ -6,7 +6,7 @@ export const SETTINGS = {
   DATE_FORMAT: 'MM/DD/YYYY HH:mm',
   DATE_SEPARATOR: ' - ',
   PICKER: {
-    HEIGHT: 358,
+    HEIGHT: 382,
     WIDTH: 680,
     OFFSET: 10
   }

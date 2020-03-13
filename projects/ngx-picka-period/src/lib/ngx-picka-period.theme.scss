@@ -5,6 +5,7 @@
   $accent: map-get($theme, accent);
   $warn: map-get($theme, accent);
   $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
 
   .ngx-picka-period {
     background: mat-color($background, card);
@@ -12,11 +13,24 @@
     .range-selector {
       background: mat-color($primary);
 
-      ngx-picka-period-range-selector {
-        mat-action-list > button {
-          color: white;
+      .range-selector-list > .range-selector-option {
+        color: white;
+      }
+    }
+
+    .time-selector {
+      .time-selector-wrapper {
+        background: mat-color($primary, 200, .50);
+
+        .time-selector-input {
+          background: transparent;
+          color: mat-color($foreground, text);
         }
       }
+    }
+
+    .calendar {
+
     }
   }
 }

@@ -1,11 +1,14 @@
+@import "../layout-variables";
+
 .time-selector-wrapper {
   display: grid;
   grid-template-columns: 3fr 1fr 3fr 4fr;
   justify-items: center;
   padding: 5px;
-  background: #ebf4f8;
+  margin: $half-padding;
   border-radius: 3px;
   width: 110px;
+  font-weight: bold;
 
   .selector {
     display: flex;
@@ -21,17 +24,17 @@
     text-align: center;
   }
 
-  input {
-    background: #ebf4f8;
+  .time-selector-input {
     text-align: center;
     border: none;
     width: 100%;
+    font-weight: bold;
+    -moz-appearance: textfield;
 
     &::-webkit-outer-spin-button,
     &::-webkit-inner-spin-button {
       -webkit-appearance: none;
       margin: 0;
     }
-    -moz-appearance: textfield;
   }
 }

@@ -5,7 +5,7 @@ import {Moment} from 'moment';
 
 import {SLIDE_IN_FROM_TOP} from './ngx-picka-period.animation';
 import {SETTINGS} from '../picker.settings';
-import {NgxPickaPeriodConfig} from '../ngx-picka-period-config.model';
+import {NgxPickaPeriodConfig} from '../models/ngx-picka-period-config.model';
 import {TimeSelectorComponent} from '../time-selector/time-selector.component';
 import {CalendarComponent} from '../calendar/calendar.component';
 import {MomentRange} from '../models/moment-range.model';

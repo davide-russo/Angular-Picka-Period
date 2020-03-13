@@ -6,7 +6,7 @@ import {takeUntil} from 'rxjs/operators';
 
 import {SETTINGS} from './picker.settings';
 import {NgxPickaPeriodComponent} from './ngx-picka-period/ngx-picka-period.component';
-import {NgxPickaPeriodConfig} from './ngx-picka-period-config.model';
+import {NgxPickaPeriodConfig} from './models/ngx-picka-period-config.model';
 
 @Directive({selector: '[ngxPickaPeriod]'})
 export class NgxPickaPeriodDirective implements OnInit, OnDestroy {
