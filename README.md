@@ -1,11 +1,11 @@
 Angular Picka Period
-========================
+====================
 
 **Angular datetime period picker**
 **This package supports Angular 9**
 
 Description
--------
+-----------
 Angular responsive datetime period picker. Online demo(StackBlitz) is [here](https://angular-picka-period.stackblitz.io/).
 This picker is responsive design, so feel free to try it in your desktops, tablets and mobile devices.
 
@@ -24,8 +24,6 @@ How to Use
         NgxPickaPeriodModule
        // ...
     ],
-
- ```
  ```
  3. Connect the picker to the template with __ngxPickaPeriod__ directive to your __matInput__, you also have to provide a __NgxPickaPeriodConfig__ to the library.
  ```html
@@ -92,5 +90,5 @@ License
 * License: MIT
 
 Author
--------
+------
 **Davide-Russo**
