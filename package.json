@@ -31,10 +31,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build": "npm run build:lib",
+    "build:lib": "ng build ngx-picka-period"
   },
   "dependencies": {
     "@angular/animations": "~9.0.5",
