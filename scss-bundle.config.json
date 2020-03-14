@@ -1,0 +1,11 @@
+{
+  "bundlerOptions": {
+    "entryFile": "./projects/ngx-picka-period/src/lib/ngx-picka-period.theme.scss",
+    "rootDir": "./projects/ngx-picka-period/src",
+    "outFile": "./dist/ngx-picka-period/ngx-picka-period.theme.scss",
+    "ignoreImports": [
+      "~@angular/.*"
+    ],
+    "logLevel": "trace"
+  }
+}

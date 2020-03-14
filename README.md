@@ -1,24 +1,23 @@
 Angular Picka Period
 ========================
 
-**Angular date time picker**
+**Angular datetime period picker**
 **This package supports Angular 9**
 
 
 Description
 -------
-Angular responsive date time picker. Online demo(StackBlitz) is [here](https://ngx-picka-period.stackblitz.io).
+Angular responsive datetime period picker. Online demo(StackBlitz) is [here](https://angular-picka-period.stackblitz.io/).
 This picker is responsive design, so feel free to try it in your desktops, tablets and mobile devices.
 
-Inspiretion
---------
-Based on the work of: [codetok](https://github.com/codetok/angular-date-range-picker) and [daterangepicker](http://www.daterangepicker.com/)
+Inspiration
+-----------
+Based on the work of: [codetok](https://github.com/codetok/angular-date-range-picker) and [daterangepicker](http://www.daterangepicker.com/).
 
 How to Use
--------
-
- 1. Install with [npm](https://www.npmjs.com):  `npm i ngx-picka-picker`
- 2. Import the module __NgxPickaPeriodModule__ and add it to your module imports
+----------
+ 1. Install with [npm](https://www.npmjs.com): `npm i ngx-picka-picker`.
+ 2. Import the module __NgxPickaPeriodModule__ and add it to your module imports.
  ```typescript
     import { NgxPickaPeriodModule } from 'ngx-picka-period';
 
@@ -27,7 +26,8 @@ How to Use
        // ...
     ],
 
-```
+ ```
+ ```
  3. Connect the picker to the template with __ngxPickaPeriod__ directive to your __matInput__, you also have to provide a __NgxPickaPeriodConfig__ to the library.
  ```html
     <mat-form-field>
@@ -35,12 +35,21 @@ How to Use
              [value]="value">
     </mat-form-field>
 ```
- 4. __ENJOY IT!__
+ 4. Add angular-material-theme ngx-picka-period-theme to your theme.scss file.
+ ```scss
+    .my-theme {
+      @include angular-material-theme($theme);
+      @include ngx-picka-period-theme($theme);
+    }
+ ```
+ 5. __ENJOY IT!__
     
 
 Animation
 -------
 This picker uses angular animations to improve the user experience, 
+---------
+This library uses Angular animations to improve the user experience, 
 therefore you need to install `@angular/animations` and import `BrowserAnimationsModule` to your application. 
 ```
 npm install @angular/animations --save
@@ -61,8 +70,14 @@ export class YourAppModule { }
 ```
 If you prefer to disable animation effect, use `NoopAnimationsModule` instead.
 
+Angular Material
+----------------
+This library relies on the Angular Material library,
+therefore you need to install `@angular/material` package, for more info please follow this [guide](https://material.angular.io/guide/getting-started).
+Remember to add the ngx-picka-period-theme to your theme configuration.
+
 Dependencies
--------
+------------
 ```
     "@angular/common": "^9.0.5",
     "@angular/core": "^9.0.5",
@@ -72,8 +87,8 @@ Dependencies
 ```
 
 Demo
--------
-- Online demo(StackBlitz) is [here]()
+----
+- Online demo(StackBlitz) is [here](https://angular-picka-period.stackblitz.io)
 
 License
 -------
