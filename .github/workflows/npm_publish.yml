@@ -15,7 +15,7 @@ jobs:
     - run: npm install -g @angular/cli
     - run: npm install
     - run: npm run build:lib
-    - run: cd projects && npm pack ngx-picka-period
-    - run: cd projects && npm publish ngx-picka-period*.tgz
+    - run: cd dist && npm pack ngx-picka-period
+    - run: cd dist && npm publish ngx-picka-period*.tgz
       env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
