@@ -4,7 +4,6 @@ Angular Picka Period
 **Angular datetime period picker**
 **This package supports Angular 9**
 
-
 Description
 -------
 Angular responsive datetime period picker. Online demo(StackBlitz) is [here](https://angular-picka-period.stackblitz.io/).
@@ -46,8 +45,6 @@ How to Use
     
 
 Animation
--------
-This picker uses angular animations to improve the user experience, 
 ---------
 This library uses Angular animations to improve the user experience, 
 therefore you need to install `@angular/animations` and import `BrowserAnimationsModule` to your application. 
