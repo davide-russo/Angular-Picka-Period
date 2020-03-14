@@ -35,6 +35,9 @@ import {MatIconModule} from '@angular/material/icon';
   exports: [
     NgxPickaPeriodComponent,
     NgxPickaPeriodDirective
+  ],
+  entryComponents: [
+    NgxPickaPeriodComponent
   ]
 })
 export class NgxPickaPeriodModule { }
