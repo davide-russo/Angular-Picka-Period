@@ -1,6 +1,32 @@
 {
   "name": "ngx-picka-period",
   "version": "0.0.1",
+  "author": {
+    "name": "Davide Russo",
+    "email": "davide.russo.genova@gmail.com"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/davide-russo/angular-picka-period"
+  },
+  "description": "An Angular Material compatible date time picker library.",
+  "keywords": [
+    "angular",
+    "material",
+    "library",
+    "date",
+    "time",
+    "period",
+    "picker",
+    "picka"
+  ],
+  "homepage": "https://github.com/davide-russo/angular-picka-period#readme",
+  "bugs": {
+    "url": "https://github.com/davide-russo/angular-picka-period/issues"
+  },
   "peerDependencies": {
     "@angular/common": "^9.0.5",
     "@angular/core": "^9.0.5",

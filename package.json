@@ -1,6 +1,33 @@
 {
   "name": "angular-picka-period",
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "author": {
+    "name": "Davide Russo",
+    "email": "davide.russo.genova@gmail.com"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/davide-russo/angular-picka-period"
+  },
+  "description": "Demo of AngularPickaPeriod library.",
+  "keywords": [
+    "angular",
+    "material",
+    "library",
+    "demo",
+    "date",
+    "time",
+    "period",
+    "picker",
+    "picka"
+  ],
+  "homepage": "https://github.com/davide-russo/angular-picka-period#readme",
+  "bugs": {
+    "url": "https://github.com/davide-russo/angular-picka-period/issues"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -9,7 +36,6 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "~9.0.5",
     "@angular/cdk": "^9.1.1",
