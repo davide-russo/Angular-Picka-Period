@@ -14,9 +14,15 @@
     </div>
   </div>
   <div class="calendar-body">
-    <div class="calendar-body-week" *ngFor="let row of calendar">
-      <div class="calendar-body-day" *ngFor="let day of row" [attr.class]="getDayClasses(day)"
-            (click)="selectDay.emit(day)">{{day.date()}}</div>
+    <div class="calendar-week" *ngFor="let row of calendar">
+      <div class="calendar-day-wrapper" *ngFor="let day of row;"
+           [attr.class]="getDayClasses(day, !!dayWrapper['isHover'])"
+           (click)="selectDay.emit(day)" (mouseenter)="dayWrapper['isHover'] = true"
+           (mouseleave)="dayWrapper['isHover'] = false" #dayWrapper>
+        <span class="calendar-day-bg"></span>
+        <span class="calendar-day-fg" matRipple [matRippleTrigger]="dayWrapper"></span>
+        <span class="calendar-day">{{day.date()}}</span>
+      </div>
     </div>
   </div>
 </div>

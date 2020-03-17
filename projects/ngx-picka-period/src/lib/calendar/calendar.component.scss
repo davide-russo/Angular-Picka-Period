@@ -43,17 +43,80 @@
   .calendar-body {
     height: $calendar-body-height;
 
-    .calendar-body-week {
+    .calendar-week {
       height: $calendar-cell;
       display: flex;
       flex-direction: row;
 
-      div {
+      .calendar-day-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         height: $calendar-cell;
         width: $calendar-cell;
         line-height: $calendar-cell;
         text-align: center;
         cursor: pointer;
+
+        .calendar-day-bg {
+          position: absolute;
+          width: $calendar-cell;
+          height: $selection;
+          z-index: 1;
+        }
+
+        .calendar-day-fg {
+          position: absolute;
+          width: $selection;
+          height: $selection;
+          border-radius: 15px;
+          z-index: 2;
+        }
+
+        .calendar-day {
+          z-index: 3;
+        }
+
+        &.in-range {
+          &.start-date, &.end-date {
+            .calendar-day-bg {
+              width: 30px;
+            }
+          }
+
+          &.start-date {
+            .calendar-day-bg {
+              margin-left: 1px;
+              border-radius: 15px 0 0 15px;
+            }
+          }
+
+          &.end-date {
+            .calendar-day-bg {
+              margin-left: -1px;
+              border-radius: 0 15px 15px 0;
+            }
+          }
+
+          &.start-week {
+            .calendar-day-bg {
+              border-radius: 15px 0 0 15px;
+            }
+          }
+
+          &.end-week {
+            .calendar-day-bg {
+              border-radius: 0 15px 15px 0;
+            }
+          }
+        }
+
+        &.is-hover {
+          .calendar-day-fg {
+            border-width: 1px;
+            border-style: dashed;
+          }
+        }
       }
     }
   }

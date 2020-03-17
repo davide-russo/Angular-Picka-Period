@@ -1,4 +1,5 @@
 @import '~@angular/material/theming';
+@import 'layout-variables';
 
 @mixin ngx-picka-period-theme($theme) {
   $primary: map-get($theme, primary);
@@ -37,6 +38,35 @@
 
         .calendar-header-week {
           color: mat-color($foreground, text, .4);
+        }
+
+        .calendar-day-wrapper {
+          &.before-month, &.after-month {
+            .calendar-day {
+              color: mat-color($foreground, text, .2);
+            }
+          }
+
+          &.start-date, &.end-date {
+            .calendar-day-fg {
+              background: mat-color($primary, 500);
+            }
+            .calendar-day {
+              color: #FFF;
+            }
+          }
+
+          &.in-range {
+            .calendar-day-bg {
+              background: mat-color($primary, 500, .25);
+            }
+          }
+
+          &.is-hover {
+            .calendar-day-fg {
+              border-color: mat-color($foreground, text, .3);
+            }
+          }
         }
       }
     }

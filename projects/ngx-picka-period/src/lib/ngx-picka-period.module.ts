@@ -13,6 +13,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {TimeSelectorComponent} from './time-selector/time-selector.component';
 import {FormsModule} from '@angular/forms';
 import {MatIconModule} from '@angular/material/icon';
+import {MatRippleModule} from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -23,15 +24,16 @@ import {MatIconModule} from '@angular/material/icon';
     ControlsComponent,
     TimeSelectorComponent,
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    OverlayModule,
-    MatListModule,
-    MatButtonModule,
-    FormsModule,
-    MatIconModule
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        OverlayModule,
+        MatListModule,
+        MatButtonModule,
+        FormsModule,
+        MatIconModule,
+        MatRippleModule
+    ],
   exports: [
     NgxPickaPeriodComponent,
     NgxPickaPeriodDirective

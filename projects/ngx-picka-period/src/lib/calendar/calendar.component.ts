@@ -1,9 +1,9 @@
 import {Component, EventEmitter, Input, OnChanges, Output} from '@angular/core';
-import * as _moment from 'moment';
 import {Moment} from 'moment';
+import * as _moment from 'moment';
 
-import {MomentRange} from '../models/moment-range.model';
 import {DayClassesCheck} from '../models/day-classes-check.model';
+import {MomentRange} from '../models/moment-range.model';
 
 const moment = _moment;
 
@@ -33,37 +33,58 @@ export class CalendarComponent implements OnChanges {
 
   private readonly _dayClassesChecks: DayClassesCheck[] = [
     {
+      classes: ['before-month'],
+      check: (day: Moment) => day.month() < this.calendarView.month()
+    },
+    {
+      classes: ['after-month'],
+      check: (day: Moment) => day.month() > this.calendarView.month()
+    },
+    {
+      classes: ['start-date'],
+      check: (day: Moment) => day.isSame(this.period.from, 'day') &&
+                              day.isSame(this.calendarView, 'month')
+    },
+    {
+      classes: ['end-date'],
+      check: (day: Moment) => day.isSame(this.period.to, 'day') &&
+                              day.isSame(this.calendarView, 'month')
+    },
+    {
+      classes: ['start-week'],
+      check: (day: Moment) => day.isSame(day.clone().startOf('week'), 'day')
+    },
+    {
+      classes: ['end-week'],
+      check: (day: Moment) => day.isSame(day.clone().endOf('week'), 'day')
+    },
+    {
+      classes: ['is-hover'],
+      check: (day: Moment, isHover: boolean) => isHover
+    },
+    {
       classes: ['today'],
       check: (day: Moment) => day.isSame(new Date(), 'day')
     },
     {
-      classes: ['off'],
-      check: (day: Moment) => day.month() !== this._month
-    },
-    {
       classes: ['in-range'],
-      check: (day: Moment) => day > moment(this.period.from) && day < moment(this.period.to)
-    },
-    {
-      classes: ['active', 'start-date'],
-      check: (day: Moment) => day.isSame(this.period.from, 'day')
-    },
-    {
-      classes: ['active', 'end-date'],
-      check: (day: Moment) => day.isSame(this.period.to, 'day')
+      check: (day: Moment) => day.isSameOrAfter(this.period.from, 'day') &&
+                              day.isSameOrBefore(this.period.to, 'day') &&
+                              !this.period.from.isSame(this.period.to, 'day')
     }
   ];
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnChanges() {
     this._renderCalendar();
   }
 
-  public getDayClasses(day: Moment): string {
-    let classes: string[] = [];
+  public getDayClasses(day: Moment, isHover: boolean): string {
+    let classes: string[] = ['calendar-day-wrapper'];
     this._dayClassesChecks.forEach((dayCheck: DayClassesCheck) => {
-      if (dayCheck.check(day)) {
+      if (dayCheck.check(day, isHover)) {
         classes = [...classes, ...dayCheck.classes];
       }
     });
