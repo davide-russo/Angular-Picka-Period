@@ -12,7 +12,7 @@ jobs:
       with:
           node-version: 12
           registry-url: https://registry.npmjs.org/
-    - run: npm install -g @angular/cli scss-bundle
+    - run: npm install -g @angular/cli@9.0.6 scss-bundle@3.0.2
     - run: npm install
     - run: npm run build:lib && scss-bundle
     - run: npm publish dist/ngx-picka-period
