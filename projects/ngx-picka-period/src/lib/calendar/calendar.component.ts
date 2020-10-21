@@ -41,6 +41,11 @@ export class CalendarComponent implements OnChanges {
       check: (day: Moment) => day.month() > this.calendarView.month()
     },
     {
+      classes: ['already-selected'],
+      check: (day: Moment) => day.isSame(this.period.from, 'day') ||
+                              day.isSame(this.period.to, 'day')
+    },
+    {
       classes: ['start-date'],
       check: (day: Moment) => day.isSame(this.period.from, 'day') &&
                               day.isSame(this.calendarView, 'month')
