@@ -21,11 +21,12 @@
 
     .time-selector {
       .time-selector-wrapper {
-        background: mat-color($primary, 200, .5);
+        background: mat-color($primary, 500);
+        color: white;
 
         .time-selector-input {
           background: transparent;
-          color: mat-color($foreground, text);
+          color: white;
         }
       }
     }
@@ -56,15 +57,15 @@
             }
           }
 
-          &.in-range {
+          &.in-range, &.already-selected-start.already-selected-end {
             .calendar-day-bg {
               background: mat-color($primary, 500, .25);
             }
           }
 
-          &.is-hover {
-            .calendar-day-fg {
-              border-color: mat-color($foreground, text, .3);
+          &.is-hover, &.in-hover-range, &.is-hover-start, &.is-hover-end {
+            .calendar-day-fg, .calendar-day-bg {
+              border-color: mat-color($primary, 500);
             }
           }
         }
