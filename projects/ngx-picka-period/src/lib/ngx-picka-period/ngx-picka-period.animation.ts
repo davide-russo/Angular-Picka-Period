@@ -9,10 +9,10 @@ export const SLIDE_IN_FROM_TOP: AnimationTriggerMetadata = trigger('slideInFromT
       animate('1ms ease-in-out', style({
         transform: 'translate(0, -50px)',
       })),
-      animate('100ms ease-in-out', style({
+      animate('500ms ease-in-out', style({
         opacity: 1
       })),
-      animate('200ms ease-in-out', style({
+      animate('1000ms ease-in-out', style({
         transform: 'translate(0, 0)',
       }))
     ]

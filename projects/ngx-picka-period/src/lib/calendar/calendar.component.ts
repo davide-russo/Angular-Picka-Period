@@ -23,6 +23,7 @@ export class CalendarComponent implements OnChanges {
 
   public daysOfWeek = moment.weekdaysMin();
   public calendar: Moment[][] = [];
+  public hoverDay: Moment;
   public monthName: string;
   public year: number;
 
@@ -39,6 +40,14 @@ export class CalendarComponent implements OnChanges {
     {
       classes: ['after-month'],
       check: (day: Moment) => day.month() > this.calendarView.month()
+    },
+    {
+      classes: ['already-selected-start'],
+      check: (day: Moment) => day.isSame(this.period.from, 'day')
+    },
+    {
+      classes: ['already-selected-end'],
+      check: (day: Moment) => day.isSame(this.period.to, 'day')
     },
     {
       classes: ['start-date'],
@@ -73,9 +82,6 @@ export class CalendarComponent implements OnChanges {
                               !this.period.from.isSame(this.period.to, 'day')
     }
   ];
-
-  constructor() {
-  }
 
   ngOnChanges() {
     this._renderCalendar();

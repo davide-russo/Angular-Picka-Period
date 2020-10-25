@@ -69,7 +69,7 @@
           position: absolute;
           width: $selection;
           height: $selection;
-          border-radius: 15px;
+          border-radius: $circle-radius;
           z-index: 2;
         }
 
@@ -86,35 +86,83 @@
 
           &.start-date {
             .calendar-day-bg {
-              margin-left: 1px;
-              border-radius: 15px 0 0 15px;
+              margin-left: 2px;
+              border-radius: $left-rounded-radius;
             }
           }
 
           &.end-date {
             .calendar-day-bg {
-              margin-left: -1px;
-              border-radius: 0 15px 15px 0;
+              margin-left: -2px;
+              border-radius: $right-rounded-radius;
+            }
+          }
+
+          &.already-selected-start {
+            &.before-month, &.after-month, &.start-week {
+              .calendar-day-bg {
+                border-radius: $left-rounded-radius;
+              }
+
+              &.end-week {
+                .calendar-day-bg {
+                  border-radius: $circle-radius;
+                }
+              }
+            }
+          }
+
+          &.already-selected-end {
+            &.before-month, &.after-month, &.end-week {
+              .calendar-day-bg {
+                border-radius: $right-rounded-radius;
+              }
+
+              &.start-week {
+                .calendar-day-bg {
+                  border-radius: $circle-radius;
+                }
+              }
             }
           }
 
           &.start-week {
             .calendar-day-bg {
-              border-radius: 15px 0 0 15px;
+              border-radius: $left-rounded-radius;
+            }
+
+            &.end-date {
+              .calendar-day-bg {
+                border-radius: $circle-radius;
+                margin: 0;
+              }
             }
           }
 
           &.end-week {
             .calendar-day-bg {
-              border-radius: 0 15px 15px 0;
+              border-radius: $right-rounded-radius;
             }
+
+            &.start-date {
+              .calendar-day-bg {
+                border-radius: $circle-radius;
+                margin: 0;
+              }
+            }
+          }
+        }
+
+        &.already-selected-start.already-selected-end {
+          .calendar-day-bg {
+            border-radius: $circle-radius;
           }
         }
 
         &.is-hover {
           .calendar-day-fg {
             border-width: 1px;
-            border-style: dashed;
+            border-style: solid;
           }
         }
       }

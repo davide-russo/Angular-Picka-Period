@@ -1,0 +1,31 @@
+<div class="range-date-picker">
+  <div class="range-selector">
+    <ngx-picka-period-range-selector
+      (range)="onRangeSelected($event)"></ngx-picka-period-range-selector>
+  </div>
+  <div class="calendar left-calendar">
+    <ngx-picka-period-calendar position="from" [period]="period" [calendarView]="calendarViewFrom"
+                               [isStartDate]="isStartDate" (changeMonth)="changeViewByMonthsOffset($event)"
+                               (selectDay)="onSelectDay($event)" #dayFrom></ngx-picka-period-calendar>
+  </div>
+  <div class="time-selector left-time-selector">
+    <ngx-picka-period-time-selector [time]="period.from" [disabled]="!isStartDate"
+                                    (selectTime)="onSelectTime($event, 'from')"
+                                    #timeFrom></ngx-picka-period-time-selector>
+  </div>
+  <div class="calendar right-calendar">
+    <ngx-picka-period-calendar position="to" [period]="period" [calendarView]="calendarViewTo"
+                               [isStartDate]="isStartDate" (changeMonth)="changeViewByMonthsOffset($event)"
+                               (selectDay)="onSelectDay($event)" #dayTo></ngx-picka-period-calendar>
+  </div>
+  <div class="time-selector right-time-selector">
+    <ngx-picka-period-time-selector [time]="period.to" [disabled]="!isStartDate"
+                                    (selectTime)="onSelectTime($event, 'to')"
+                                    #timeTo></ngx-picka-period-time-selector>
+  </div>
+  <div class="filler"></div>
+  <div class="controls">
+    <ngx-picka-period-controls [disableApply]="incompleteRange"
+                               (apply)="onApply()" (cancel)="onCancel()"></ngx-picka-period-controls>
+  </div>
+</div>

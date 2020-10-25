@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {OverlayModule} from '@angular/cdk/overlay';
 
 import {NgxPickaPeriodComponent} from './ngx-picka-period/ngx-picka-period.component';
@@ -14,6 +14,8 @@ import {TimeSelectorComponent} from './time-selector/time-selector.component';
 import {FormsModule} from '@angular/forms';
 import {MatIconModule} from '@angular/material/icon';
 import {MatRippleModule} from '@angular/material/core';
+import {RangeDatePickerComponent} from './date-pickers/range-date-picker/range-date-picker.component';
+import {SingleDatePickerComponent} from './date-pickers/single-date-picker/single-date-picker.component';
 
 @NgModule({
   declarations: [
@@ -23,17 +25,20 @@ import {MatRippleModule} from '@angular/material/core';
     RangeSelectorComponent,
     ControlsComponent,
     TimeSelectorComponent,
+    RangeDatePickerComponent,
+    SingleDatePickerComponent,
   ],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        OverlayModule,
-        MatListModule,
-        MatButtonModule,
-        FormsModule,
-        MatIconModule,
-        MatRippleModule
-    ],
+  imports: [
+    BrowserAnimationsModule,
+    NoopAnimationsModule,
+    BrowserModule,
+    OverlayModule,
+    MatListModule,
+    MatButtonModule,
+    FormsModule,
+    MatIconModule,
+    MatRippleModule
+  ],
   exports: [
     NgxPickaPeriodComponent,
     NgxPickaPeriodDirective

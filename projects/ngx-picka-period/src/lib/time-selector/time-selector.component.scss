@@ -22,11 +22,13 @@
 
   .time-now {
     text-align: center;
+    cursor: pointer;
   }
 
   .time-selector-input {
     text-align: center;
     border: none;
+    outline: none;
     width: 100%;
     font-weight: bold;
     -moz-appearance: textfield;

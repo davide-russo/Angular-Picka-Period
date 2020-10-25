@@ -1,0 +1,56 @@
+@import "../../layout-variables";
+
+.range-date-picker {
+  height: 100%;
+
+  .range-selector {
+    grid-area: range-selector;
+    width: $range-selector-width;
+    border-radius: 4px 0 0 4px;
+  }
+
+  .filler {
+    grid-area: filler;
+  }
+
+  .controls {
+    grid-area: controls;
+    height: $controls-height;
+  }
+
+  .calendar {
+    height: $calendar-height;
+    width: $calendar-width;
+
+    &.left-calendar {
+      grid-area: left-calendar;
+    }
+    &.right-calendar {
+      grid-area: right-calendar;
+    }
+  }
+
+  .time-selector {
+    display: flex;
+    justify-content: center;
+    width: $calendar-width;
+    height: $time-selector-height;
+    &.left-time-selector {
+      grid-area: left-time-selector;
+    }
+    &.right-time-selector {
+      grid-area: right-time-selector;
+    }
+  }
+
+  display: grid;
+  grid-template-areas:
+      "range-selector left-calendar right-calendar"
+      "range-selector left-calendar right-calendar"
+      "range-selector left-time-selector right-time-selector"
+      "range-selector filler controls";
+
+  .left-calendar, .left-time-selector, .filler {
+    box-shadow: 1px 0 0 0 rgba(0, 0, 0, .2);
+  }
+}
