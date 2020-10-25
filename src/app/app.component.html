@@ -1,6 +1,10 @@
 <mat-form-field>
   <input matInput placeholder="Pick a period" ngxPickaPeriod [ngxPickaPeriodConfig]="config"
-         [value]="value" [rangeSelection]="true">
+         [value]="periodValue" [rangeSelection]="true">
+</mat-form-field>
+<mat-form-field>
+  <input matInput placeholder="Pick a date" ngxPickaPeriod [ngxPickaPeriodConfig]="config"
+         [value]="dateValue">
 </mat-form-field>
 <button mat-raised-button color="primary" (click)="themeSwitcher()">
   Switch Theme&nbsp;<mat-icon>invert_colors</mat-icon>

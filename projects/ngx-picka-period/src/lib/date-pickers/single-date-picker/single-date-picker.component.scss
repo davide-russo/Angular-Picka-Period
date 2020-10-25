@@ -1,0 +1,35 @@
+@import "../../layout-variables";
+
+.single-date-picker {
+  height: 100%;
+
+  .filler {
+    grid-area: filler;
+  }
+
+  .controls {
+    grid-area: controls;
+    height: $controls-height;
+  }
+
+  .calendar {
+    height: $calendar-height;
+    width: $calendar-width;
+    grid-area: calendar;
+  }
+
+  .time-selector {
+    display: flex;
+    justify-content: center;
+    width: $calendar-width;
+    height: $time-selector-height;
+    grid-area: time-selector;
+  }
+
+  display: grid;
+  grid-template-areas:
+      "calendar calendar"
+      "calendar calendar"
+      "time-selector time-selector"
+      "filler controls";
+}

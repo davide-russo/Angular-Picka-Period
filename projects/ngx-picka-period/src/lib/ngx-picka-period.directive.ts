@@ -11,7 +11,7 @@ import {NgxPickaPeriodConfig} from './models/ngx-picka-period-config.model';
 @Directive({selector: '[ngxPickaPeriod]'})
 export class NgxPickaPeriodDirective implements OnInit, OnDestroy {
   @Input() ngxPickaPeriodConfig: NgxPickaPeriodConfig = {};
-  @Input() rangeSelection: boolean;
+  @Input() rangeSelection = false;
 
   @HostBinding('readonly') readonly = true;
 
@@ -20,7 +20,7 @@ export class NgxPickaPeriodDirective implements OnInit, OnDestroy {
     originY: 'bottom',
     overlayX: 'start',
     overlayY: 'top',
-    offsetY: SETTINGS.PICKER.OFFSET
+    offsetY: SETTINGS.RANGE_PICKER.OFFSET
   }];
 
   private _portalRef: ComponentPortal<NgxPickaPeriodComponent>;
@@ -73,19 +73,20 @@ export class NgxPickaPeriodDirective implements OnInit, OnDestroy {
   }
 
   private _createOverlay(): OverlayRef {
+    const pickerConfig = this.rangeSelection ? SETTINGS.RANGE_PICKER : SETTINGS.SINGLE_PICKER;
     return this.overlay.create({
-      height: SETTINGS.PICKER.HEIGHT,
-      width: SETTINGS.PICKER.WIDTH,
+      height: pickerConfig.HEIGHT,
+      width: pickerConfig.WIDTH,
       hasBackdrop: true,
       backdropClass: null,
       positionStrategy: this._createPositionStrategy()
     });
   }
 
-  private _createPickerInjector(config: NgxPickaPeriodConfig, period: string, rangeSelection: boolean): PortalInjector {
+  private _createPickerInjector(config: NgxPickaPeriodConfig, value: string, rangeSelection: boolean): PortalInjector {
     const injectorTokens = new WeakMap();
     injectorTokens.set(SETTINGS.CONFIG_TOKEN, config);
-    injectorTokens.set(SETTINGS.PERIOD_TOKEN, period);
+    injectorTokens.set(SETTINGS.VALUE_TOKEN, value);
     injectorTokens.set(SETTINGS.RANGE_SELECTION_TOKEN, rangeSelection);
     return new PortalInjector(this.injector, injectorTokens);
   }

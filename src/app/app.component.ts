@@ -17,7 +17,8 @@ export class AppComponent implements OnInit {
   private readonly _from = moment().format(SETTINGS.DATE_FORMAT);
   private readonly _to = moment().add(1, 'month').format(SETTINGS.DATE_FORMAT);
 
-  public value = `${this._from} - ${this._to}`;
+  public periodValue = `${this._from} - ${this._to}`;
+  public dateValue = `${this._from}`;
 
   ngOnInit() {
     const body = document.getElementsByTagName('body')[0];

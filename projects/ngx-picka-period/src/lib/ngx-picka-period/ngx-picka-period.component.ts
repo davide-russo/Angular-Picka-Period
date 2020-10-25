@@ -21,7 +21,7 @@ export class NgxPickaPeriodComponent implements OnInit, OnDestroy {
 
   constructor(
     @Inject(SETTINGS.CONFIG_TOKEN) public config: NgxPickaPeriodConfig,
-    @Inject(SETTINGS.PERIOD_TOKEN) public value: string,
+    @Inject(SETTINGS.VALUE_TOKEN) public value: string,
     @Inject(SETTINGS.RANGE_SELECTION_TOKEN) public isRangeSelection: boolean
   ) {}
 

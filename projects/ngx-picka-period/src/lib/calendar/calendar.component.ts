@@ -1,11 +1,12 @@
 import {Component, EventEmitter, Input, OnChanges, Output} from '@angular/core';
 import {Moment} from 'moment';
 import * as _moment from 'moment';
-
 import {DayClassesCheck} from '../models/day-classes-check.model';
 import {MomentRange} from '../models/moment-range.model';
 
 const moment = _moment;
+
+export type CalendarPosition = 'from' | 'to' | null;
 
 @Component({
   selector: 'ngx-picka-period-calendar',
@@ -16,8 +17,9 @@ export class CalendarComponent implements OnChanges {
   @Output() changeMonth = new EventEmitter();
   @Output() selectDay = new EventEmitter();
 
-  @Input() position: 'from' | 'to';
+  @Input() position: CalendarPosition;
   @Input() period: MomentRange;
+  @Input() date: Moment;
   @Input() calendarView: Moment;
   @Input() isStartDate: boolean;
 
@@ -43,20 +45,24 @@ export class CalendarComponent implements OnChanges {
     },
     {
       classes: ['already-selected-start'],
-      check: (day: Moment) => day.isSame(this.period.from, 'day')
+      check: (day: Moment) => this.period &&
+                              day.isSame(this.period.from, 'day')
     },
     {
       classes: ['already-selected-end'],
-      check: (day: Moment) => day.isSame(this.period.to, 'day')
+      check: (day: Moment) => this.period &&
+                              day.isSame(this.period.to, 'day')
     },
     {
       classes: ['start-date'],
-      check: (day: Moment) => day.isSame(this.period.from, 'day') &&
+      check: (day: Moment) => this.period &&
+                              day.isSame(this.period.from, 'day') &&
                               day.isSame(this.calendarView, 'month')
     },
     {
       classes: ['end-date'],
-      check: (day: Moment) => day.isSame(this.period.to, 'day') &&
+      check: (day: Moment) => this.period &&
+                              day.isSame(this.period.to, 'day') &&
                               day.isSame(this.calendarView, 'month')
     },
     {
@@ -77,9 +83,15 @@ export class CalendarComponent implements OnChanges {
     },
     {
       classes: ['in-range'],
-      check: (day: Moment) => day.isSameOrAfter(this.period.from, 'day') &&
+      check: (day: Moment) => this.period &&
+                              day.isSameOrAfter(this.period.from, 'day') &&
                               day.isSameOrBefore(this.period.to, 'day') &&
                               !this.period.from.isSame(this.period.to, 'day')
+    },
+    {
+      classes: ['selected-date'],
+      check: (day: Moment) => this.date &&
+                              day.isSame(this.date, 'day')
     }
   ];
 

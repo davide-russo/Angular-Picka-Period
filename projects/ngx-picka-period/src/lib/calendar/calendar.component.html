@@ -1,11 +1,11 @@
 <div class="calendar-wrapper">
   <div class="calendar-header">
     <div class="calendar-header-controls">
-      <button class="calendar-header-nav-btn" mat-icon-button *ngIf="position==='from'" (click)="changeMonth.emit(-1)">
+      <button class="calendar-header-nav-btn" mat-icon-button *ngIf="!position || position==='from'" (click)="changeMonth.emit(-1)">
         <mat-icon>keyboard_arrow_left</mat-icon>
       </button>
       <span class="calendar-header-month-year">{{monthName}} {{year}}</span>
-      <button class="calendar-header-nav-btn" mat-icon-button *ngIf="position==='to'" (click)="changeMonth.emit(1)">
+      <button class="calendar-header-nav-btn" mat-icon-button *ngIf="!position || position==='to'" (click)="changeMonth.emit(1)">
         <mat-icon>keyboard_arrow_right</mat-icon>
       </button>
     </div>

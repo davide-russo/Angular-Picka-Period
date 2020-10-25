@@ -1,6 +1,6 @@
 <div class="ngx-picka-period" [@slideInFromTop]="isOpen ? 'enter' : 'void'">
   <ngx-picka-period-range-date-picker [config]="config" [value]="value" (valueChange)="updateValue($event)"
                                       (closePicker)="closePicker()" *ngIf="isRangeSelection"></ngx-picka-period-range-date-picker>
-  <ngx-picka-period-single-date-picker [config]="config" [value]="value"
+  <ngx-picka-period-single-date-picker [config]="config" [value]="value" (valueChange)="updateValue($event)" (closePicker)="closePicker()"
                                        *ngIf="!isRangeSelection"></ngx-picka-period-single-date-picker>
 </div>

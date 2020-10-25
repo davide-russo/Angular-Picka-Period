@@ -1,1 +1,15 @@
-<p>single-selection works!</p>
+<div class="single-date-picker">
+  <div class="calendar">
+    <ngx-picka-period-calendar [date]="date" [calendarView]="calendarView"
+                               (changeMonth)="changeViewByMonthsOffset($event)"
+                               (selectDay)="onSelectDay($event)" #calendar></ngx-picka-period-calendar>
+  </div>
+  <div class="time-selector">
+    <ngx-picka-period-time-selector [time]="date" (selectTime)="onSelectTime($event)"
+                                    #time></ngx-picka-period-time-selector>
+  </div>
+  <div class="filler"></div>
+  <div class="controls">
+    <ngx-picka-period-controls (apply)="onApply()" (cancel)="onCancel()"></ngx-picka-period-controls>
+  </div>
+</div>

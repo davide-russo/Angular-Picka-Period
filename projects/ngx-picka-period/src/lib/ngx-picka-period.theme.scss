@@ -48,7 +48,7 @@
             }
           }
 
-          &.start-date, &.end-date {
+          &.start-date, &.end-date, &.selected-date {
             .calendar-day-fg {
               background: mat-color($primary, 500);
             }

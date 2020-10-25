@@ -25,6 +25,7 @@
     &.left-calendar {
       grid-area: left-calendar;
     }
+
     &.right-calendar {
       grid-area: right-calendar;
     }
@@ -35,9 +36,11 @@
     justify-content: center;
     width: $calendar-width;
     height: $time-selector-height;
+
     &.left-time-selector {
       grid-area: left-time-selector;
     }
+
     &.right-time-selector {
       grid-area: right-time-selector;
     }
