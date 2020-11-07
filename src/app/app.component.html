@@ -19,4 +19,18 @@
              [value]="dateValue">
     </mat-form-field>
   </div>
+  <div class="demo-picker">
+    <h3>Range mode - Reactive Form</h3>
+    <mat-form-field>
+      <input matInput placeholder="Pick a period" ngxPickaPeriod [ngxPickaPeriodConfig]="config"
+             [formControl]="periodControl" [rangeSelection]="true">
+    </mat-form-field>
+  </div>
+  <div class="demo-picker">
+    <h3>Single date mode - Reactive Form</h3>
+    <mat-form-field>
+      <input matInput placeholder="Pick a date" ngxPickaPeriod [ngxPickaPeriodConfig]="config"
+             [formControl]="dateControl">
+    </mat-form-field>
+  </div>
 </div>

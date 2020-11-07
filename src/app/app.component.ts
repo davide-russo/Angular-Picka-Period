@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import * as _moment from 'moment';
 import {SETTINGS} from '../../projects/ngx-picka-period/src/lib/picker.settings';
+import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
+import {combineLatest} from 'rxjs';
 
 const moment = _moment;
 
@@ -20,9 +22,14 @@ export class AppComponent implements OnInit {
   public periodValue = `${this._from} - ${this._to}`;
   public dateValue = `${this._from}`;
 
+  public dateControl: FormControl = new FormControl(new Date());
+  public periodControl: FormControl = new FormControl(new Date());
+
   ngOnInit() {
     const body = document.getElementsByTagName('body')[0];
     body.classList.add(this.themeColor);
+    combineLatest([this.periodControl.valueChanges, this.dateControl.valueChanges])
+      .subscribe(value => console.log(value));
   }
 
   public themeSwitcher() {
