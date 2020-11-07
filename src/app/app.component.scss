@@ -1,4 +1,28 @@
-mat-form-field {
-  padding: 16px;
-  width: 236px;
+.demo-title {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+
+  h1 {
+    margin: 0;
+  }
 }
+
+.demo-container {
+  display: flex;
+  flex-direction: column;
+
+  .demo-picker {
+    border-top: 1px solid #d1d1d1;
+
+    h3 {
+      padding: 0 8px;
+    }
+
+    mat-form-field {
+      padding: 16px;
+      width: 236px;
+    }
+  }
+}
+

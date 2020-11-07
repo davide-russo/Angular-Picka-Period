@@ -1,11 +1,22 @@
-<mat-form-field>
-  <input matInput placeholder="Pick a period" ngxPickaPeriod [ngxPickaPeriodConfig]="config"
-         [value]="periodValue" [rangeSelection]="true">
-</mat-form-field>
-<mat-form-field>
-  <input matInput placeholder="Pick a date" ngxPickaPeriod [ngxPickaPeriodConfig]="config"
-         [value]="dateValue">
-</mat-form-field>
-<button mat-raised-button color="primary" (click)="themeSwitcher()">
-  Switch Theme&nbsp;<mat-icon>invert_colors</mat-icon>
-</button>
+<div class="demo-title">
+  <h1>Angular Picka Period</h1>
+  <button mat-raised-button color="primary" (click)="themeSwitcher()">
+    Switch Theme&nbsp;<mat-icon>invert_colors</mat-icon>
+  </button>
+</div>
+<div class="demo-container">
+  <div class="demo-picker">
+    <h3>Range mode</h3>
+    <mat-form-field>
+      <input matInput placeholder="Pick a period" ngxPickaPeriod [ngxPickaPeriodConfig]="config"
+             [value]="periodValue" [rangeSelection]="true">
+    </mat-form-field>
+  </div>
+  <div class="demo-picker">
+    <h3>Single date mode</h3>
+    <mat-form-field>
+      <input matInput placeholder="Pick a date" ngxPickaPeriod [ngxPickaPeriodConfig]="config"
+             [value]="dateValue">
+    </mat-form-field>
+  </div>
+</div>

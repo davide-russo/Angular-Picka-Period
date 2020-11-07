@@ -86,14 +86,14 @@
 
           &.start-date {
             .calendar-day-bg {
-              margin-left: 2px;
+              margin-left: 1px;
               border-radius: $left-rounded-radius;
             }
           }
 
           &.end-date {
             .calendar-day-bg {
-              margin-left: -2px;
+              margin-left: -1px;
               border-radius: $right-rounded-radius;
             }
           }
