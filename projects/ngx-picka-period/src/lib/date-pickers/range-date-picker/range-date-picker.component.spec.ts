@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { RangeDatePickerComponent } from './range-date-picker.component';
 
@@ -6,7 +6,7 @@ describe('MultipleSelectionComponent', () => {
   let component: RangeDatePickerComponent;
   let fixture: ComponentFixture<RangeDatePickerComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ RangeDatePickerComponent ]
     })
