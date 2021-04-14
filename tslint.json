@@ -1,8 +1,15 @@
 {
   "extends": "tslint:recommended",
   "rules": {
+    "align": {
+      "options": [
+        "parameters",
+        "statements"
+      ]
+    },
     "no-empty-interface": false,
     "variable-name": false,
+    "arrow-return-shorthand": true,
     "member-ordering": false,
     "no-inferrable-types": false,
     "directive-selector": [
@@ -11,6 +18,7 @@
       "lib",
       "camelCase"
     ],
+    "curly": true,
     "component-selector": [
       true,
       "element",
@@ -20,8 +28,15 @@
     ],
     "array-type": false,
     "arrow-parens": false,
+    "eofline": true,
     "deprecation": {
       "severity": "warning"
+    },
+    "import-spacing": true,
+    "indent": {
+      "options": [
+        "spaces"
+      ]
     },
     "component-class-suffix": true,
     "contextual-lifecycle": true,
@@ -68,12 +83,54 @@
     "no-inputs-metadata-property": true,
     "no-output-native": true,
     "no-output-on-prefix": true,
+    "semicolon": {
+      "options": [
+        "always"
+      ]
+    },
+    "space-before-function-paren": {
+      "options": {
+        "anonymous": "never",
+        "asyncArrow": "always",
+        "constructor": "never",
+        "method": "never",
+        "named": "never"
+      }
+    },
     "no-output-rename": true,
     "no-outputs-metadata-property": true,
     "template-banana-in-box": true,
+    "typedef-whitespace": {
+      "options": [
+        {
+          "call-signature": "nospace",
+          "index-signature": "nospace",
+          "parameter": "nospace",
+          "property-declaration": "nospace",
+          "variable-declaration": "nospace"
+        },
+        {
+          "call-signature": "onespace",
+          "index-signature": "onespace",
+          "parameter": "onespace",
+          "property-declaration": "onespace",
+          "variable-declaration": "onespace"
+        }
+      ]
+    },
     "template-no-negated-async": true,
     "use-lifecycle-interface": true,
-    "use-pipe-transform-interface": true
+    "use-pipe-transform-interface": true,
+    "whitespace": {
+      "options": [
+        "check-branch",
+        "check-decl",
+        "check-operator",
+        "check-separator",
+        "check-type",
+        "check-typecast"
+      ]
+    }
   },
   "rulesDirectory": [
     "codelyzer"
