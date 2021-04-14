@@ -39,6 +39,7 @@
     "build:lib": "ng build ngx-picka-period --prod"
   },
   "dependencies": {
+    "@angular-devkit/core": "^11.2.8",
     "@angular/animations": "~10.2.4",
     "@angular/cdk": "^10.2.7",
     "@angular/common": "~10.2.4",
